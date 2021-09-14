@@ -14,7 +14,7 @@ function SplashPage() {
                             <h2>Stay Compact</h2>
                         </div>
                         <div className="banner1-content-btn">
-                            <button>Explore Now!</button>
+                            <button className="banner1-btn"><span>Explore Now!</span></button>
                         </div>
                     </div>
                 </div>
