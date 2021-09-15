@@ -20,6 +20,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 25px;
 
 }
 
@@ -136,4 +137,108 @@
 }
 .banner1-btn span:hover:after {
   width: 100%;
+}
+
+
+/*Anywhere*/
+.anywhere-container{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.explore-icons-container{
+  display: grid;
+  grid-template-columns: repeat(4, 30%);
+  grid-template-rows: repeat(2, 100px);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-areas: 
+    "icon1 icon2 icon3 icon4"
+    "icon5 icon6 icon7 icon8" 
+  ;
+  margin-top: 10px;
+}
+
+.explore-icon img{
+ 
+  width: 90px;
+  height: 90px;
+  border-radius: 20%;
+}
+
+.explore-icon h2{
+  margin-left: 10px;
+}
+
+.explore-icon1{
+  grid-area: icon1;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.explore-icon2{
+  grid-area: icon2;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.explore-icon3{
+  grid-area: icon3;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+
+.explore-icon4{
+  grid-area: icon4;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.icon4-img{
+  filter: brightness(160%);
+}
+
+.explore-icon5{
+  grid-area: icon5;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.icon5-img{
+  filter: brightness(160%);
+}
+
+.explore-icon6{
+  grid-area: icon6;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.explore-icon7{
+  grid-area: icon7;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.explore-icon8{
+  grid-area: icon8;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
 }
