@@ -140,15 +140,16 @@
 }
 
 
-/*Anywhere*/
+/*Explore Anywhere*/
 .anywhere-container{
   margin-left: 50px;
   margin-right: 50px;
+  
 }
 
 .explore-icons-container{
   display: grid;
-  grid-template-columns: repeat(4, 30%);
+  grid-template-columns: repeat(4, 27%);
   grid-template-rows: repeat(2, 100px);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -241,4 +242,47 @@
   height: fit-content;
   display: flex;
   align-items: center;
+}
+
+/* Stay Anywhere */
+.stayAnywhere-content{
+  margin-top: 25px;
+}
+.stayAnywhere-cards-container{
+    display: grid;
+    grid-template-columns: repeat(4, 27%);
+    /* grid-template-rows: 200px; */
+    grid-column-gap: -15px;
+    grid-template-areas: 
+      "card1 card2 card3 card4";
+    margin-top: 10px;
+}
+
+.cards-img{
+  width: 250px;
+  height: 250px;
+  border-radius: 5%;
+}
+.stayAnywhere-card1{
+    grid-area: card1;
+    width: fit-content;
+    height: fit-content;
+}
+
+.stayAnywhere-card2{
+    grid-area: card2;
+    width: fit-content;
+    height: fit-content;
+}
+
+.stayAnywhere-card3{
+    grid-area: card3;
+    width: fit-content;
+    height: fit-content;
+}
+
+.stayAnywhere-card4{
+    grid-area: card4;
+    width: fit-content;
+    height: fit-content;
 }

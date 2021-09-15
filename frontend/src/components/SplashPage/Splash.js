@@ -61,7 +61,27 @@ function SplashPage() {
                         </div>
                     </div>
                     <div className="stayAnywhere-content">
-                        <h1>Stay anywhere</h1>
+                        <div className="stayAnywhere-h1">
+                            <h1>Stay anywhere</h1>
+                        </div>
+                        <div className="stayAnywhere-cards-container">
+                            <div className="stayAnywhere-card1">
+                                <img className="cards-img" src="https://cdn.shopify.com/s/files/1/1561/8759/files/Joshua_Tree_Harebnb_Tiny_House_1024x1024.jpg?v=1581294887" alt="img"/>
+                                <h2>Unique stays</h2>
+                            </div>
+                            <div className="stayAnywhere-card2">
+                                <img className="cards-img" src="https://s7d1.scene7.com/is/image/terrain/54555784_000_a?$zoom2$" alt="img"/>
+                                <h2>Pets friendly</h2>
+                            </div>
+                            <div className="stayAnywhere-card3">
+                                <img className="cards-img" src="https://img.buzzfeed.com/buzzfeed-static/static/2020-12/6/23/asset/1782bce46867/sub-buzz-19302-1607298515-1.jpg?downsize=700%3A%2A&output-quality=auto&output-format=auto" alt="img"/>
+                                <h2>Outdoor getaways</h2>
+                            </div>
+                            <div className="stayAnywhere-card4">
+                                <img className="cards-img" src="https://img.buzzfeed.com/buzzfeed-static/static/2020-12/4/3/asset/2a375c70a0b7/sub-buzz-15237-1607051655-5.png?downsize=600:*&output-format=auto&output-quality=auto" alt="img"/>
+                                <h2>Entire homes</h2>
+                            </div>                                                        
+                        </div>
 
                     </div>
                 </div>
