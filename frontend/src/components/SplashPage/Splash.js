@@ -84,6 +84,15 @@ function SplashPage() {
                         </div>
 
                     </div>
+                    {/* Hosting Banner */}
+                    <div className="hosting-banner-container">
+                        <div className="hosting-banner-content">
+                            <h1 className="hosting-banner-h">Try hosting!</h1>
+                            <p className="hosting-banner-h">Earn extra income by sharing your tiny homes</p>
+                            <button className="hosting-banner-btn">Host Now!</button>
+                         
+                        </div>
+                    </div>
                 </div>
         
         </div>

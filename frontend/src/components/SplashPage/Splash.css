@@ -1,19 +1,27 @@
 /* font imports*/
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Domine:wght@500&family=Nanum+Myeongjo&family=Vollkorn&display=swap');
-    /* font-family: 'Amatic SC', cursive;
-       font-family: 'Domine', serif;
-       font-family: 'Nanum Myeongjo', serif;
-       font-family: 'Vollkorn', serif; */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+    /* font-family: 'Amatic SC', cursive;
+    font-family: 'Domine', serif;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Vollkorn', serif;
+    font-family: 'Baloo 2', cursive;
+    font-family: 'Sacramento', cursive; */
 
+
+
+
+.Splash-Page{
+  overflow: hidden;
+}
 
 /* banner */
 
 .banner1{
     background-image: url("./image/banner1.jpeg");
     width: 100%;
-    min-height: 600px;
+    min-height: 700px;
     background-size: cover;
     background-position: center center;
 
@@ -142,22 +150,40 @@
 
 /*Explore Anywhere*/
 .anywhere-container{
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 1%;
+  padding-left: 6%;
+  margin-right: 1%;
+  padding-right: 2%; */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* width: 90%; */
+  /* justify-content: flex-start; */
+  align-items: center;
+  width: 100vw;
+
   
+  /* margin-right: 50px; */
+  
+}
+
+.explore-content{
+  width: 95%;
 }
 
 .explore-icons-container{
   display: grid;
-  grid-template-columns: repeat(4, 27%);
+  grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(2, 100px);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  /* grid-column-gap: 10px;
+  grid-row-gap: 10px; */
   grid-template-areas: 
     "icon1 icon2 icon3 icon4"
     "icon5 icon6 icon7 icon8" 
   ;
   margin-top: 10px;
+  width: 100%;
+
 }
 
 .explore-icon img{
@@ -245,12 +271,14 @@
 }
 
 /* Stay Anywhere */
+
 .stayAnywhere-content{
   margin-top: 25px;
+  width: 95%;
 }
 .stayAnywhere-cards-container{
     display: grid;
-    grid-template-columns: repeat(4, 27%);
+    grid-template-columns: repeat(4, 25%);
     /* grid-template-rows: 200px; */
     grid-column-gap: -15px;
     grid-template-areas: 
@@ -259,7 +287,7 @@
 }
 
 .cards-img{
-  width: 250px;
+  width: 300px;
   height: 250px;
   border-radius: 5%;
 }
@@ -285,4 +313,56 @@
     grid-area: card4;
     width: fit-content;
     height: fit-content;
+}
+
+/* Hosting banner*/
+.hosting-banner-container{
+  background-image: url("./image/hosting-banner.png") ;
+  width: 95%;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center center;
+
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.hosting-banner-content{
+    background-color: rgba(0, 0, 0, 0.89);
+    backdrop-filter: blur(3px);
+    height: 480px;
+    width: 450px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hosting-banner-h{
+  color: white
+}
+
+.hosting-banner-content h1{
+  margin-bottom: 10px;
+}
+
+.hosting-banner-btn{
+    margin-top: 30px;
+    font-family: 'Baloo 2', cursive;
+    background:rgba(255, 255, 255, 0.972);
+    font-size: 16px;
+    height: 50px;
+    width: 130px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+
+.hosting-banner-btn:hover{
+  color: rgb(141, 196, 243);
+  font-size: 20px;
+  height: 55px;
+  width: 135px;
 }
