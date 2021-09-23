@@ -1,0 +1,16 @@
+.individual-listing{
+    width: 100%;
+    border: 1px solid ;
+    height: 100%;
+    margin: 20px 2% 20px 2%;
+
+
+    
+
+}
+
+.individual-listing-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
