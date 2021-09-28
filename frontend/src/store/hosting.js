@@ -64,6 +64,13 @@ export const createHosting = (form) => async dispatch =>{
 
 }
 
+export const deleteOneHosting = (id) => async dispatch =>{
+    const response = await csrfFetch(`/api/hostings/${id}`,{
+        method: "DELETE"
+    });
+    dispatch(deleteHosting(id))
+} 
+
 let initialState = {}
 
 const hostingReducer = (state = initialState, action) =>{
@@ -74,6 +81,16 @@ const hostingReducer = (state = initialState, action) =>{
                 ...state,
                 ...Object.fromEntries(action.hostings.map(hosting => [hosting.id, hosting]))
             }
+        case ADD_HOSTING: 
+            return {
+                ...state,
+                [action.hosting.id]: action.hosting
+            }
+        case DELETE_HOSTING:
+            const newState = {...state};
+            delete newState[action.hostingId];
+            return newState;
+
         default:
             return state;
     }

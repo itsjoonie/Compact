@@ -15,11 +15,11 @@ function HostingForm(){
     const [city, setCity] = useState("");
     const [state, setState] = useState("");
     const [country, setCountry] = useState("");
-    const [guest, setGuest] = useState(0);
+    const [guest, setGuest] = useState("");
     const [pet, setPet] = useState(false);
-    const [bed, setBed] = useState(0);
-    const [bathroom, setBathroom] = useState(0);
-    const [price, setPrice]= useState(0);
+    const [bed, setBed] = useState("");
+    const [bathroom, setBathroom] = useState("");
+    const [price, setPrice]= useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -42,6 +42,8 @@ function HostingForm(){
             history.push(`/hostings`)
         }
     }
+
+ 
 
     return (
         <div className="hosting-form-page">
@@ -87,12 +89,12 @@ function HostingForm(){
                     </div>
                      <div className="hosting-form-field">
                         <div>
-                            <label>guest</label>
+                            <label>How many people can stay here?</label>
                         </div>
                         <input 
                         type="text" name="guest" value={guest} placeholder="how many people can stay?" onChange={(e) => setGuest(e.target.value)}/>
                     </div>
-                     <div className="hosting-form-field">
+                    <div className="hosting-form-field">
                         <div>
                             <label>Pets allowed?</label>
                         </div>
@@ -102,7 +104,30 @@ function HostingForm(){
                         <input 
                         type="radio" id="noPet" name="pet" value={false} onChange={(e) => setPet(e.target.value)}/>
                         <label for="noPet">No</label>
-                    </div>                    
+                    </div>   
+                    <div className="hosting-form-field">
+                        <div>
+                            <label>How many beds?</label>
+                        </div>
+                        <input 
+                        type="text" name="bed" value={bed} onChange={(e) => setBed(e.target.value)}/>
+                    </div>
+                    <div className="hosting-form-field">
+                        <div>
+                            <label>how many bathrooms?</label>
+                        </div>
+                        <input 
+                        type="text" name="bathroom" value={bathroom} onChange={(e) => setBathroom(e.target.value)}/>
+                    </div>
+                    <div className="hosting-form-field">
+                        <div>
+                            <label>Set Price per day</label>
+                        </div>
+                        <input 
+                        type="text" name="price" value={price}  onChange={(e) => setPrice(e.target.value)}/>
+                    </div> 
+                    <button type="submit">submit</button>   
+                    <button >Cancel</button>               
                 </form>
             </div>
 
