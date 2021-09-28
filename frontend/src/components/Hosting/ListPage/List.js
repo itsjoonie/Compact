@@ -17,7 +17,11 @@ function List (){
         <>
             <div className="list">
                  {hostings.map(hosting => (
-                 <h1> {hosting.title}</h1>)
+                <div key={hosting.id}>
+                 <h1> {hosting.title}</h1>
+                 <h2> {hosting.description}</h2>
+                 </div>
+                 )
                  )}
 
             </div>
