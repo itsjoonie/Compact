@@ -12,7 +12,6 @@ const { handleValidationErrors } = require('../../utils/validation')
 //get all hostings
 router.get('/', asyncHandler(async (req, res, next) => { 
    const hostings = await Hosting.findAll();
-   console.log('hostinggggg res', res.json(hostings))
    return res.json(hostings);
 
 }));

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import "./List.css";
 import {getHostings} from "../../../store/hosting";
 
-function List (){
+function List(){
     const dispatch = useDispatch()
     const hostings = useSelector((state)=> Object.values(state.hosting))
 

@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage/Splash";
 import IndividualListing from "./components/IndividualListingPage/IndividualListing";
 import List from "./components/Hosting/ListPage/List";
+import HostingForm from "./components/Hosting/HostingForm/HostingForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,8 +33,11 @@ function App() {
             <SplashPage/>
           </Route>
           <Route path="/testingpage">
-            <IndividualListing/>
             <List/>
+            <HostingForm/> 
+          </Route>
+          <Route path="/hostings">
+            <IndividualListing/>
           </Route>
         </Switch>
       )}
