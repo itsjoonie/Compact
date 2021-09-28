@@ -16,5 +16,15 @@ router.get('/', asyncHandler(async (req, res, next) => {
 }));
 
 
+//get one hosting 
+router.get('/:id', asyncHandler(async (req, res) => {
+    const hosting = await Hosting.findByPk(req.params.id);
+    return res.json(hosting);
+}));
+
+router.post('/new', asyncHandler(async (req, res) => {
+   
+}))
+
 
 module.exports = router;
