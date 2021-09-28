@@ -22,9 +22,25 @@ router.get('/:id', asyncHandler(async (req, res) => {
     return res.json(hosting);
 }));
 
-router.post('/new', asyncHandler(async (req, res) => {
-   
+router.post('/new', requireAuth, asyncHandler(async (req, res) => {
+   const {userId, title, description, city, state, country, guest, pet, bed, bathroom, price} = req.body;
+   const hosting = await Hosting.create(req.body);
+   return res.json({hosting})
 }))
 
+router.put('/:id', requireAuth, asyncHandler(async (req, res, next) => {
+   const id = req.params.id;
+   const hosting = await Hosting.findByPk(id);
+   const {userId, title, description, city, state, country, guest, pet, bed, bathroom, price} = req.body;
+   const updateHosting= await Hosting.update(req.body);
+   return res.json(updateHosting);
+}));
 
+
+router.delete('/:id', requireAuth, asyncHandler(async (req, res, next) =>{
+   const hosting = await Hosting.findByPk(+req.params.id);
+    hosting.destroy();
+    return res.json("successfully deleted");
+
+}))
 module.exports = router;
