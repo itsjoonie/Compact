@@ -81,7 +81,7 @@ module.exports = {
           pic4: 'https://hipcamp-res.cloudinary.com/images/c_limit,f_auto,h_1200,q_60,w_1920/v1619327252/campground-photos/xk0yja1qdyravnyo2ksc/the-enchanted-forest-retreat-enchanted-forest-retreat-tiny-house-san-francisco.jpg',
           pic5: 'https://www.hipcamp.com/california/the-enchanted-forest-retreat/enchanted-forest-retreat-tiny-house?pic=5a22979c-fa97-4632-88cb-cadb800f81e6',
           pic6: 'https://hipcamp-res.cloudinary.com/images/c_limit,f_auto,h_1200,q_60,w_1920/v1612417729/campground-photos/alr7kc68p5ggm5akoxtk/the-enchanted-forest-retreat-enchanted-forest-retreat-tiny-house-san-francisco.png'    
-        }
+        },
         {
           hostingId: 9,
           pic1: 'https://a0.muscache.com/im/pictures/0a66027d-4961-4dac-b69f-e318c2c10cb2.jpg?im_w=720',
@@ -90,15 +90,15 @@ module.exports = {
           pic4: 'https://a0.muscache.com/im/pictures/425d8f14-eabf-4a6b-b6dc-d9b4614c7290.jpg?im_w=720',
           pic5: 'https://a0.muscache.com/im/pictures/fdcd3022-9c5d-4a6e-a31d-595380e33866.jpg?im_w=1200',
           pic6: 'https://a0.muscache.com/im/pictures/7de70a05-d6ca-44a0-a6c9-9f4e7069c1dc.jpg?im_w=720'    
-        }
+        },
         {
           hostingId: 10,
-          pic1: '',
-          pic2: '',
-          pic3: '',
-          pic4: '',
-          pic5: '',
-          pic6: ''    
+          pic1: 'https://www.atinyhouseresort.com/uploads/9/vista%20spring.jpg',
+          pic2: 'https://www.atinyhouseresort.com/uploads/9/view%20from%20the%20vista%20fall.jpg',
+          pic3: 'https://www.atinyhouseresort.com/uploads/9/winter%20at%20the%20vista.jpg',
+          pic4: 'https://www.atinyhouseresort.com/uploads/9/vista%20borrow.jpg',
+          pic5: 'https://www.atinyhouseresort.com/uploads/9/litchen%20photo%20vista%20lr.jpg',
+          pic6: 'https://www.atinyhouseresort.com/uploads/9/IMG_2290.JPG'    
         }
       ], {});
   },
@@ -111,5 +111,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
+    return queryInterface.bulkDelete('Images', null, {});
   }
 };
