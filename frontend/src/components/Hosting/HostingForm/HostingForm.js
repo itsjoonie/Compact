@@ -47,83 +47,129 @@ function HostingForm(){
 
     return (
         <div className="hosting-form-page">
+            <div className="hosting-form-picture">
+                <div className="hosting-form-slogan">
+                <h1>Host your tiny house, earn big bucks</h1>
+                </div>
+            </div>
             <div className="hosting-form-container">
-                <form className="hosting-form" onSubmit={handleSubmit}>
-                    <div className="hosting-form-heading">
-                        <h1>Hosting Application</h1>
-                    </div>
-                    <div className="hosting-form-field">
+                   <div className="hosting-form-heading">
                         <div>
+                        <h1>Hosting Application</h1>
+                        </div>
+                    </div>
+                <form className="hosting-form" onSubmit={handleSubmit}>
+                 
+                    <div className="hosting-form-field">
+                        <div className="hosting-form-label">
                             <label>Title</label>
                         </div>
-                        <input 
-                        type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+                        <div>
+                            <input className="hosting-input-box"
+                            type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+                        </div>
                     </div>
                     <div className="hosting-form-field">
-                        <div>
+                        <div className="hosting-form-label">
                             <label>Description</label>
                         </div>
-                        <textarea
-                        type="text" name="description" rows="5" cols="33" value={description} onChange={(e) => setDescription(e.target.value)}/>
+                        <div>
+                            <textarea className="hosting-textarea"
+                            type="text" name="description" rows="10" cols="33" value={description} onChange={(e) => setDescription(e.target.value)}/>
+                        </div>
                     </div>
                     <div className="hosting-form-field">
-                        <div>
+                        <div className="hosting-form-label">
                             <label>City</label>
                         </div>
-                        <input 
+                        <input className="hosting-input-box"
                         type="text" name="city" value={city} onChange={(e) => setCity(e.target.value)}/>
                     </div>
                     <div className="hosting-form-field">
-                        <div>
+                        <div className="hosting-form-label">
                             <label>State</label>
                         </div>
-                        <input 
+                        <input className="hosting-input-box"
                         type="text" name="state" value={state} onChange={(e) => setState(e.target.value)}/>
                     </div>
                     <div className="hosting-form-field">
-                        <div>
+                        <div className="hosting-form-label">
                             <label>Country</label>
                         </div>
-                        <input 
+                        <input className="hosting-input-box"
                         type="text" name="country" value={country} onChange={(e) => setCountry(e.target.value)}/>
                     </div>
                      <div className="hosting-form-field">
-                        <div>
+                        <div className="hosting-form-label">
                             <label>How many people can stay here?</label>
                         </div>
-                        <input 
-                        type="text" name="guest" value={guest} placeholder="how many people can stay?" onChange={(e) => setGuest(e.target.value)}/>
-                    </div>
-                    <div className="hosting-form-field">
                         <div>
-                            <label>Pets allowed?</label>
+                            <select className="hosting-input-box"
+                            name="guest"
+                            onChange={(e) => setGuest(e.target.value)}>
+                                <option>Please select a number</option>
+                                <option value={1}>1</option>
+                                <option value={2}>2</option>
+                                <option value={3}>3</option>
+                                <option value={4}>4</option>
+                                <option value={5}>5</option>
+                                <option value={6}>6</option>
+                                <option value={7}>7</option>
+                                <option value={8}>8</option>
+                            </select>
                         </div>
+                    </div>
+                    <div className="petAllowed">
+                        <div><label>Pets allowed?  </label>
                         <input 
                         type="radio" id="yesPet" name="pet" value={true} onChange={(e) => setPet(e.target.value)}/> 
-                        <label for="yesPet">Yes</label>
+                        <label for="yesPet">Yes  </label>
                         <input 
                         type="radio" id="noPet" name="pet" value={false} onChange={(e) => setPet(e.target.value)}/>
                         <label for="noPet">No</label>
+                        </div>
                     </div>   
                     <div className="hosting-form-field">
-                        <div>
+                        <div className="hosting-form-label">
                             <label>How many beds?</label>
                         </div>
-                        <input 
-                        type="text" name="bed" value={bed} onChange={(e) => setBed(e.target.value)}/>
+                        <select className="hosting-input-box"
+                        name="bed"
+                        onChange={(e) => setBed(e.target.value)}>
+                            <option>Please select a number of bedrooms</option>
+                            <option value={1}>1</option>
+                            <option value={2}>2</option>
+                            <option value={3}>3</option>
+                            <option value={4}>4</option>
+                            <option value={5}>5</option>
+                            <option value={6}>6</option>
+                            <option value={7}>7</option>
+                            <option value={8}>8</option>
+                        </select>
                     </div>
                     <div className="hosting-form-field">
                         <div>
-                            <label>how many bathrooms?</label>
+                            <label className="hosting-form-label">How many bathrooms?</label>
                         </div>
-                        <input 
-                        type="text" name="bathroom" value={bathroom} onChange={(e) => setBathroom(e.target.value)}/>
+                        <select className="hosting-input-box"
+                        name="bathroom"
+                        onChange={(e) => setBathroom(e.target.value)}>
+                            <option>Please select a number of bathrooms</option>
+                            <option value={1}>1</option>
+                            <option value={2}>2</option>
+                            <option value={3}>3</option>
+                            <option value={4}>4</option>
+                            <option value={5}>5</option>
+                            <option value={6}>6</option>
+                            <option value={7}>7</option>
+                            <option value={8}>8</option>
+                        </select>
                     </div>
                     <div className="hosting-form-field">
                         <div>
-                            <label>Set Price per day</label>
+                            <label className="hosting-form-label">Set Price per day</label>
                         </div>
-                        <input 
+                        <input className="hosting-input-box"
                         type="text" name="price" value={price}  onChange={(e) => setPrice(e.target.value)}/>
                     </div> 
                     <button type="submit">submit</button>   

@@ -34,10 +34,13 @@ function App() {
           </Route>
           <Route path="/testingpage">
             <List/>
-            <HostingForm/> 
+            
           </Route>
           <Route path="/hostings">
             <IndividualListing/>
+          </Route>
+          <Route path="/hosting/application" exact>
+            <HostingForm/> 
           </Route>
         </Switch>
       )}
