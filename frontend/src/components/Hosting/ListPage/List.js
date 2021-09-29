@@ -18,10 +18,11 @@ function List(){
 
 
     return (
-        <>
+        <div>
+            <h1>Tiny Home Stays</h1>
             <div className="list">
                  {hostings.map(hosting => (
-                <div key={hosting.id}>
+                <div className="list-cards" key={hosting.id}>
                  <h1> {hosting.title}</h1>
                  <h2> {hosting.description}</h2>
             
@@ -30,7 +31,7 @@ function List(){
                  )}
 
             </div>
-        </>
+        </div>
     )
 }
 

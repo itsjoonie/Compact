@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import "./Splash.css"
 
 function SplashPage() {

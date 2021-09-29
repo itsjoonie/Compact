@@ -33,11 +33,13 @@ function App() {
             <SplashPage/>
           </Route>
           <Route path="/testingpage">
-            <List/>
             
           </Route>
           <Route path="/hostings">
             <IndividualListing/>
+          </Route>
+          <Route path="/listing" exact>
+            <List/>
           </Route>
           <Route path="/hosting/application" exact>
             <HostingForm/> 
