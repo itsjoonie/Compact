@@ -4,9 +4,11 @@ const router = express.Router();
 const asyncHandler = require('express-async-handler');
 
 const { requireAuth } = require('../../utils/auth');
-const { Hosting, Image, User } = require('../../db/models');
+const { Hosting, Image, User, Booking, Review } = require('../../db/models');
 const { check } = require('express-validator');
-const { handleValidationErrors } = require('../../utils/validation')
+const { handleValidationErrors } = require('../../utils/validation');
+const booking = require('../../db/models/booking');
+const review = require('../../db/models/review');
 
 
 //get all hostings
@@ -21,7 +23,15 @@ router.get('/', asyncHandler(async (req, res, next) => {
 
 //get one hosting 
 router.get('/:id', asyncHandler(async (req, res) => {
-    const hosting = await Hosting.findByPk(req.params.id);
+    const hosting = await Hosting.findByPk(req.params.id, {
+       include:[Image, User, {
+          model: Booking,
+          include:{
+             model: Review,
+             include: [User, Booking]
+          }
+       }]
+    });
     return res.json(hosting);
 }));
 
