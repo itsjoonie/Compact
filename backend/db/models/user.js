@@ -16,6 +16,12 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+    firstName:{
+      type: DataTypes.STRING,
+    },
+    lastName:{
+      type: DataTypes.STRING,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -54,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
-    const { id, username, email } = this; // context will be the User instance
+    const { id, username, firstName, lastName, email } = this; // context will be the User instance
     return { id, username, email };
   };
 
@@ -81,9 +87,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
 
-  User.signup = async function ({ username, email, password }) {
+  User.signup = async function ({ username, firstName, lastName, email, password }) {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
+      firstName,
+      lastName,
       username,
       email,
       hashedPassword,
