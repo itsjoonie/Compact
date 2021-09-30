@@ -10,6 +10,7 @@ import SplashPage from "./components/SplashPage/Splash";
 import IndividualListing from "./components/IndividualListingPage/IndividualListing";
 import List from "./components/Hosting/ListPage/List";
 import HostingForm from "./components/Hosting/HostingForm/HostingForm";
+import BookingForm from "./components/Booking/BookingForm";
 
 
 function App() {
@@ -34,15 +35,17 @@ function App() {
             <SplashPage/>
           </Route>
           <Route path="/testingpage">
+            <HostingForm/> 
             
           </Route>
-          <Route path="/hosting/:id" exact>
+          <Route path="/listing/:id" exact>
             <IndividualListing/>
+            <BookingForm/>
           </Route>
           <Route path="/listing" exact>
             <List/>
           </Route>
-          <Route path="/hosting/application" exact>
+          <Route path="/application/hosting" exact>
             <HostingForm/> 
           </Route>
         </Switch>

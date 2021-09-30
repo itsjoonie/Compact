@@ -15,7 +15,9 @@ function SplashPage() {
                             <h2>Stay Compact</h2>
                         </div>
                         <div className="banner1-content-btn">
+                            <NavLink to="/listing">
                             <button className="banner1-btn"><span>Explore Now!</span></button>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
@@ -31,7 +33,7 @@ function SplashPage() {
                                 <h2>Joshua tree</h2>
                             </div>
                             <div className="explore-icon explore-icon2">
-                                <img className="explore-icon" src="https://www.travelyosemite.com/media/822625/merced-river-yosemite-hald-dome-view-252168645-1000x667.jpg?anchor=center&mode=crop&width=363&height=346&rnd=132424897380000000" alt="img" />
+                                <img className="explore-icon" src="https://cdn2.wanderlust.co.uk/media/1001/yosemite-web.jpg?anchor=center&mode=crop&width=1200&height=0&rnd=132636423430000000" alt="img" />
                                 <h2>Yosemite</h2>
                             </div>
                                 <div className="explore-icon explore-icon3">
@@ -90,7 +92,9 @@ function SplashPage() {
                         <div className="hosting-banner-content">
                             <h1 className="hosting-banner-h">Try hosting!</h1>
                             <p className="hosting-banner-h">Earn extra income by sharing your tiny homes</p>
+                            <NavLink to="/application/hosting">
                             <button className="hosting-banner-btn">Host Now!</button>
+                            </NavLink>
                          
                         </div>
                     </div>
