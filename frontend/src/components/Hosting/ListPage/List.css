@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Poppins', sans-serif; */
+
+.list-page{
+    margin-top: 30px;
+}
+
 .list-cards-content, .listing-header{
     border-bottom: 1px solid rgb(195, 196, 198);
     display: flex;
@@ -7,7 +16,11 @@
 }
 
 .listing-header{
-    height: 100px !important;
+    height: 90px !important;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .list-cards-content-img img{
@@ -20,7 +33,37 @@
 
 }
 .list-descriptions{
-    height: 140px;
+    height: 80px;
     text-overflow: ellipsis;
     overflow: hidden; 
 }
+
+.list-cards-content-left{
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.list-cards-content-left h1{
+    font-size: 23px;
+}
+.list-descriptions{
+    word-spacing: 0.1em;
+    font-size: 11px
+}
+
+.list-rating{
+    font-size: 11px;
+    display: grid;
+   
+
+    
+}
+
+.line-seperation{
+    width: 40px;
+    margin: 15px 0 15px 0;
+    
+}
+
+

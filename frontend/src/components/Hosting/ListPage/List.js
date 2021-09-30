@@ -19,19 +19,27 @@ function List(){
 
 
     return (
-        <div>
+        <div className="list-page">
             <div className="listing-header">
-            <h1>Tiny Home Stays</h1>
+                <div>
+                    <h1>Tiny Home Stays</h1>
+                </div>
+                <div>
+                    <p><i class="fas fa-home"></i>  Many tiny houses you can call home for the duration of your stay.</p>
+                </div>
             </div>
             <div className="list-container">
                 <div>
                     {hostings.map(hosting => (
                     <div className="list-cards-content" key={hosting.id}>
                         <div className="list-cards-content-img">
-                            <img src={hosting.Images[0].pic1} alt="pic1"></img>
+                            <img src={hosting.Images[0].pic1} alt=""></img>
                         </div>
                         <div className="list-cards-content-left">
-                            <h1> {hosting.title}</h1>
+                            <div>
+                                <h1> {hosting.title}</h1>
+                            </div>
+                            <hr className="line-seperation"/>
                             <div className="list-descriptions">
                                 <h2> {hosting.guest} guests · {hosting.bed} bed · {hosting.bathroom} bath   </h2>
                                 {hosting.pet?
@@ -43,6 +51,14 @@ function List(){
                                     pet friendly: no
                                 </h2>
                                 }
+                            </div>
+                            <div className="list-rating">
+                                <div>
+                                    <h2>Star</h2>
+                                </div>
+                                <div>
+                                    <h2>${hosting.price}/night</h2>
+                                </div>
                             </div>
                         </div>
                 
