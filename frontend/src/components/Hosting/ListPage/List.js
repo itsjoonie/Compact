@@ -20,7 +20,9 @@ function List(){
 
     return (
         <div>
+            <div className="listing-header">
             <h1>Tiny Home Stays</h1>
+            </div>
             <div className="list-container">
                 <div>
                     {hostings.map(hosting => (
