@@ -1,16 +1,25 @@
-.individual-listing{
-    width: 100%;
-    border: 1px solid ;
-    height: 100%;
-    margin: 20px 2% 20px 2%;
-
-
+.images-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+    height: 550px;
     
-
+}
+.image-main{
+    width: 50%;
+}
+#pic1{
+    width: 99%;
+    height: 545px;
 }
 
-.individual-listing-title{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.images-left{
+    /* height: 100%; */
+    
+}
+#pic2, 
+#pic3{
+    height: 270px;
+    width: 50%
 }

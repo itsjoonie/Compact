@@ -9,7 +9,6 @@ function List(){
     const dispatch = useDispatch()
     const history = useHistory()
     const hostings = useSelector((state)=> Object.values(state.hosting))
-    console.log(hostings, "what us tgusss")
     const hostingId = hostings.id
 
     useEffect(() => {

@@ -11,6 +11,7 @@ import IndividualListing from "./components/IndividualListingPage/IndividualList
 import List from "./components/Hosting/ListPage/List";
 import HostingForm from "./components/Hosting/HostingForm/HostingForm";
 
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -35,7 +36,7 @@ function App() {
           <Route path="/testingpage">
             
           </Route>
-          <Route path="/hostings">
+          <Route path="/hosting/:id" exact>
             <IndividualListing/>
           </Route>
           <Route path="/listing" exact>
