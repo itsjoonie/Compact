@@ -52,7 +52,7 @@ function App() {
           <Route path="/application/hosting" exact>
             <HostingForm/> 
           </Route>
-          <Route path="/application/hosting/images/:id" exact>
+          <Route path="/application/hosting/images/:hostingId" exact>
             <ImageForm/> 
           </Route>
           <Route path="/update/hosting/:id" exact>

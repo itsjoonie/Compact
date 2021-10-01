@@ -79,7 +79,7 @@ export const createHosting = (form) => async dispatch =>{
 }
 
 export const updateHosting = (form, id) => async dispatch =>{
-    
+    console.log(form, "WHAT IS THISSSSSSSSS")
     const response = await csrfFetch(`/api/hostings/${id}`, {
         method: "PUT",
         headers: {

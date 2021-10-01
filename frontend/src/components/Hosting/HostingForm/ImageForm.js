@@ -15,12 +15,14 @@ function ImageForm(){
 
 
 
+
     const [pic1, setPic1] = useState("");
     const [pic2, setPic2] = useState("");
     const [pic3, setPic3] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("hosting id pls", hostingId)
         const payload = {
             hostingId,
             pic1,
@@ -76,10 +78,7 @@ function ImageForm(){
                                 </div> 
                             </div>   
                         </form>
-                    </div>
-               
-                        
-                
+                    </div>  
             </div>
 
         </div>

@@ -31,6 +31,7 @@ function UpdateHostingForm(){
 
     const handleUpdate = async (e) => {
         e.preventDefault();
+        console.log(userId, "USER ID PLEASE")
         const payload = {
             title,
             description,
@@ -145,10 +146,10 @@ function UpdateHostingForm(){
                     <div className="petAllowed">
                         <div><label>Pets allowed?  </label>
                         <input 
-                        type="radio" id="yesPet" name="pet" checked={true === pet} value={true} onChange={(e) => setPet(e.target.value)}/> 
+                        type="radio" id="yesPet" name="pet" checked={pet} value={true} onChange={(e) => setPet(e.target.value)}/> 
                         <label for="yesPet">Yes  </label>
                         <input 
-                        type="radio" id="noPet" name="pet" checked={false === pet} value={false} onChange={(e) => setPet(e.target.value)}/>
+                        type="radio" id="noPet" name="pet" checked={pet} value={false} onChange={(e) => setPet(e.target.value)}/>
                         <label for="noPet">No</label>
                         </div>
                     </div>   
