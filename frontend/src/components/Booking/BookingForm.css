@@ -12,3 +12,39 @@
     display: flex;
     flex-direction: row;
 }
+
+.booking-form-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    border: 1px solid rgba(120, 119, 119, 0.728);
+    width: 243px;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgba(193, 194, 194, 0.42), -2px -2px rgba(193, 194, 194, 0.42);
+    ;
+
+}
+
+.booking-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.date-inputs{
+
+}
+
+.react-datepicker__input-container input{
+    width: 100%;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.bookingBtn{
+    margin-top: 25px;
+}
+
+.bookingBtn{
+    height: 28px;
+}

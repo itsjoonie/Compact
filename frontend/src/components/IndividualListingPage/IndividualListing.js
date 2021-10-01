@@ -22,8 +22,8 @@ function IndividualListing(){
 
     return (
         <div className="individual-listing">
-            <div className="individual-listing-title">
-              
+            <div className="individual-listing-container">
+           
                 <h1>Title Goes Here</h1>
                   <div className="images-container">
                     <div className="image-main">
@@ -39,20 +39,23 @@ function IndividualListing(){
 
                     </div>
                 </div>
-                <div className="reviews-and-location">
-                    <div className="listing-star-rating">
-                        star review
+                <div className="listing-booking-content">
+                    <div>
+                        <div className="listing-star-rating">
+                            star review
+                        </div>
+                        <div    className="listing-location">
+                            Location here
+                        </div>
+                        <div className="listing-like">Heart
+                        </div>
                     </div>
-                    <div    className="listing-location">
-                        Location here
-                    </div>
-                    <div className="listing-like">Heart
-                    </div>
+                      <div   className="booking-component">
+                    <BookingForm/>
+                </div>
                 </div>
                
-            </div>
-              <BookingForm/>    
-
+           </div>
         </div>
     )
 }

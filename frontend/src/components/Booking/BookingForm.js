@@ -8,11 +8,14 @@ import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css"
 
 function BookingForm() {
-    
-
+   
+    const id = useParams().id
+    const hosting = useSelector((state) => state.hosting[id]) 
+    console.log("stayhereree", hosting)
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const[guest, setGuest] = useState(1);
+    const [day, setDay] = useState(0);
  
 
     const handleCheckInDate = (date) => {
@@ -22,6 +25,8 @@ function BookingForm() {
     const handleCheckOutDate = (date) => {
         setEndDate(date);
     };
+
+ 
 
     // guest counter
 
@@ -41,44 +46,68 @@ function BookingForm() {
         };
     }
 
+
+
+
+
+const date1 = new Date('7/13/2010');
+const date2 = new Date('12/15/2010');
+const diffTime = Math.abs(date2 - date1);
+const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+console.log(diffDays + " days");
+
+
     //if guest went over the limit, pause the counter when it hit max guest
 
   const handleCalendarClose = () => console.log("Calendar closed");
   const handleCalendarOpen = () => console.log("Calendar opened");
 
     return(
-        <div className="booking-form">
-            <h1>Booking form</h1>
-            <form>
-                <label>Check-in</label>
-                <DatePicker
-                    selected={startDate}
-                    minDate={new Date()}
-                    onChange={handleCheckInDate}
-                />
-                <label>Check-out</label>
-                <DatePicker
-                    selected={endDate}
-                    minDate={startDate}
-                     onChange={handleCheckOutDate}
-                />
+        <div className="booking-form-page">
+            <div>
+            <h1>Stay Here?</h1>
+                <form className="booking-form">
+                    <div className="date-inputs">
+                        <div>
+                            <label>Check-in</label>
+                            <DatePicker
+                                selected={startDate}
+                                minDate={new Date()}
+                                onChange={handleCheckInDate}
+                            />
+                        </div>
+                    <div>
+                    <label>Check-out</label>
+                    <DatePicker
+                        selected={endDate}
+                        minDate={startDate}
+                        onChange={handleCheckOutDate}
+                    />
+                    </div>
+                        <div className="guestNum">
+                            <label>How many guests?</label>
+                                <div className="guest-counter-content">
+                                
 
-                <label>How many guests?</label>
-                <div className="guest-counter-content">
-                   
+                                    <button onClick={guestCounterMinus}>
+                                        <i class="fas fa-user-minus"></i></button>
+                                    <div className="guestInput">
+                                            <label>{guest}</label>
+                                    </div>
+                                <button onClick={guestCounter}>
+                                <i class="fas fa-user-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button className="bookingBtn">RESERVE NOW!</button>
+                    {/* <div>
+                        <label>Total days</label>
+                        <label>{setDay(setEndDate)}</label>
+                    </div> */}
 
-                    <button onClick={guestCounterMinus}>
-                        <i class="fas fa-user-minus"></i></button>
-                    <div className="guestInput">
-                        <label>{guest}</label>
-                   </div>
-                    <button onClick={guestCounter}>
-                       <i class="fas fa-user-plus"></i>
-                    </button>
-                </div>
-
-            </form>
-
+                </form>
+            </div>
         </div>
     )
 }
