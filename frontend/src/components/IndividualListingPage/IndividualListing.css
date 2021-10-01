@@ -2,20 +2,27 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: 1px solid black;
+    padding-left:150px;
+    padding-right:150px;
 
 }
 .individual-listing-container{
     width:inherit;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.individual-listing-header div p{
+    margin-top: 10px;
 }
 
 .images-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: inherit;
+    width: 100%;
     height: 550px;
-   
+    margin-top: 20px;
     
 }
 .image-main{
@@ -23,34 +30,84 @@
     margin-right: 5px;
 }
 #pic1{
-    width: 100%;
+    width: inherit;
     height: 545px;
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+
 }
 
-.images-left{
-    /* height: 100%; */
-    display: inline-block;
 
-    
-}
-.image1, .image2{
-
-  
-}
 #pic2, 
 #pic3{
     height: 270px;
+    width: 400px;
+}
+
+#pic2{
+    border-top-right-radius: 2%;
+    
+}
+#pic3{
+border-bottom-right-radius: 2%;
+}
+
+.listing-content-left{
+    width: 90%;
+}
+.listing-home{
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+    border-bottom: 1px solid #b6b6b6;
     width: inherit;
+    margin: 10px 0 20px 0;
+    
+}
+
+.listing-home div{
+    margin-right: 10px;
 }
 
 .listing-booking-content{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 20px;
+    width: inherit;
+    
 }
+
+
 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
 }
+
+.listing-extra-info{
+    height: 170px;
+    border-bottom: 1px solid #b6b6b6;
+    width: inherit;
+}
+
+.listing-extra-info div{
+    margin-bottom: 15px;
+    
+  
+}
+
+.listing-extra-info div h4 i {
+    margin-right: 10px;
+}
+
+.listing-extra-info div p{
+    margin-left: 25px;
+}
+
+.listing-description-info{
+    width: inherit;
+    margin-top: 20px;
+}
+

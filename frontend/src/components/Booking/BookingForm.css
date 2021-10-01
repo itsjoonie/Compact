@@ -22,7 +22,12 @@
     border-radius: 10px;
     box-shadow: 3px 3px rgba(193, 194, 194, 0.42), -2px -2px rgba(193, 194, 194, 0.42);
     ;
+    /* position: fixed; */
 
+}
+
+.booking-form-page div h1{
+    margin: 10px 0 10px 0;
 }
 
 .booking-form{
@@ -30,6 +35,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
 
 .date-inputs{
 
@@ -46,5 +52,6 @@
 }
 
 .bookingBtn{
-    height: 28px;
+    height: 40px;
+    background-color: rgb(255, 114, 98);
 }
