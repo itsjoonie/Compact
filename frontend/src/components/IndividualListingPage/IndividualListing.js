@@ -4,6 +4,9 @@ import { useParams, useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import "./IndividualListing.css"
 import {getHostings, deleteOneHosting} from "../../store/hosting"
+import BookingForm from "../Booking/BookingForm";
+
+
 
 function IndividualListing(){
     const dispatch = useDispatch()
@@ -48,6 +51,7 @@ function IndividualListing(){
                 </div>
                
             </div>
+              <BookingForm/>    
 
         </div>
     )
