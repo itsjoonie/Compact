@@ -11,6 +11,8 @@ import IndividualListing from "./components/IndividualListingPage/IndividualList
 import List from "./components/Hosting/ListPage/List";
 import HostingForm from "./components/Hosting/HostingForm/HostingForm";
 import ImageForm from "./components/Hosting/HostingForm/ImageForm";
+import UpdateHostingForm from "./components/Hosting/HostingForm/UpdateHostingForm";
+import {getHostings} from './store/hosting'
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(getHostings())
   }, [dispatch]);
 
   return (
@@ -52,8 +55,8 @@ function App() {
           <Route path="/application/hosting/images" exact>
             <ImageForm/> 
           </Route>
-          <Route path="/booking" exact>
-              
+          <Route path="/update/hosting/:id" exact>
+              <UpdateHostingForm/>
           </Route>
         </Switch>
       )}

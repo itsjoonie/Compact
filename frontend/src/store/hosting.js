@@ -45,6 +45,16 @@ export const getHostings = () => async dispatch =>{
     }
 }
 
+export const getOneHosting = (hostingId) => async dispatch =>{
+    const response = await csrfFetch(`/api/hostings/${hostingId}`);
+    if(response.ok){
+        const hosting = await response.json();
+        dispatch(getHosting(hosting))
+    }
+    return response;
+
+}
+
 export const createHosting = (form) => async dispatch =>{
     console.log(form, "what is this")
     const response = await csrfFetch(`/api/hostings/new`, {
@@ -64,6 +74,22 @@ export const createHosting = (form) => async dispatch =>{
 
 }
 
+export const updateHosting = (hostingId, form) => async dispatch =>{
+    const response = await csrfFetch(`/api/hostings/${hostingId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form)
+    });
+    const hosting = await response.json();
+    if(response.ok){
+        
+        dispatch(editHosting(hosting));
+    }
+    return hosting
+}
+
 export const deleteOneHosting = (id) => async dispatch =>{
     const response = await csrfFetch(`/api/hostings/${id}`,{
         method: "DELETE"
@@ -81,7 +107,17 @@ const hostingReducer = (state = initialState, action) =>{
                 ...state,
                 ...Object.fromEntries(action.hostings.map(hosting => [hosting.id, hosting]))
             }
+        case GET_HOSTING:
+            return {
+                ...state,
+                [action.hosting.id]: action.hosting
+            }
         case ADD_HOSTING: 
+            return {
+                ...state,
+                [action.hosting.id]: action.hosting
+            }
+        case UPDATE_HOSTING: 
             return {
                 ...state,
                 [action.hosting.id]: action.hosting

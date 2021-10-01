@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, NavLink } from "react-router-dom";
+import { useHistory, NavLink, useParams } from "react-router-dom";
 import * as sessionActions from "../../../store/session";
-import {createHosting} from "../../../store/hosting";
+import {createHosting, getHostings, updateHosting, getOneHosting} from "../../../store/hosting";
 import "./HostingForm.css"
 
-function HostingForm(){
+function UpdateHostingForm(){
     const dispatch = useDispatch();
     let history = useHistory();
-    const userId = useSelector(state => state.session.user.id); // grab user id from store
+    const {id} = useParams();
+   console.log(id,"WHAT IS THIS")
+    const hosting = useSelector((state) => state.hosting[id])
+    console.log(hosting, "WHAT IS THIS HOSTING STUFF")
+    const userId = useSelector(state => state.session.user.id);
+    const hostingId = hosting?.id
+    console.log("WHAT IS THIS THIS ID", hostingId) // grab user id from store
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -16,12 +22,14 @@ function HostingForm(){
     const [state, setState] = useState("");
     const [country, setCountry] = useState("");
     const [guest, setGuest] = useState("");
-    const [pet, setPet] = useState(false);
+    const [pet, setPet] = useState("");
     const [bed, setBed] = useState("");
     const [bathroom, setBathroom] = useState("");
     const [price, setPrice]= useState("");
 
-    const handleSubmit = async (e) => {
+ 
+
+    const handleUpdate = async (e) => {
         e.preventDefault();
         const payload = {
             userId,
@@ -37,11 +45,27 @@ function HostingForm(){
             price
         }
 
-        let newHosting = await dispatch(createHosting(payload))
-        if(newHosting){
+        let editHosting = await dispatch(updateHosting(payload, hosting?.id))
+        if(editHosting){
             history.push(`/hostings`)
         }
     }
+
+   useEffect(() => {
+        if(hosting){
+            setTitle(hosting?.title)
+            setDescription(hosting?.description)
+            setCity(hosting?.city)
+            setState(hosting?.state)
+            setCountry(hosting?.country)
+            setGuest(hosting?.guest)
+            setPet(hosting?.pet)
+            setBed(hosting?.bed)
+            setBathroom(hosting?.bathroom)
+            setPrice(hosting?.price)
+        }
+    },[hosting])
+
 
  
 
@@ -55,10 +79,10 @@ function HostingForm(){
             <div className="hosting-form-container">
                    <div className="hosting-form-heading">
                         <div>
-                        <h1>Hosting Application</h1>
+                        <h1>Update Hosting Application</h1>
                         </div>
                     </div>
-                <form className="hosting-form" onSubmit={handleSubmit}>
+                <form className="hosting-form" onSubmit={handleUpdate}>
                  
                     <div className="hosting-form-field">
                         <div className="hosting-form-label">
@@ -122,10 +146,10 @@ function HostingForm(){
                     <div className="petAllowed">
                         <div><label>Pets allowed?  </label>
                         <input 
-                        type="radio" id="yesPet" name="pet" value={true} onChange={(e) => setPet(e.target.value)}/> 
+                        type="radio" id="yesPet" name="pet" checked={true === pet} value={true} onChange={(e) => setPet(e.target.value)}/> 
                         <label for="yesPet">Yes  </label>
                         <input 
-                        type="radio" id="noPet" name="pet" value={false} onChange={(e) => setPet(e.target.value)}/>
+                        type="radio" id="noPet" name="pet" checked={false === pet} value={false} onChange={(e) => setPet(e.target.value)}/>
                         <label for="noPet">No</label>
                         </div>
                     </div>   
@@ -167,7 +191,7 @@ function HostingForm(){
                     </div>
                     <div className="hosting-form-field">
                         <div>
-                            <label className="hosting-form-label">Set Price per day</label>
+                            <label className="hosting-form-label">Set Price per night $</label>
                         </div>
                         <input className="hosting-input-box"
                         type="text" name="price" value={price}  onChange={(e) => setPrice(e.target.value)}/>
@@ -190,4 +214,4 @@ function HostingForm(){
 
 }
 
-export default HostingForm;
+export default UpdateHostingForm;

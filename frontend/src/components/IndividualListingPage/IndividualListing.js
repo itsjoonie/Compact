@@ -24,21 +24,23 @@ function IndividualListing(){
         <div className="individual-listing">
             <div className="individual-listing-container">
                 <div className="individual-listing-header">
+                <div>
                 <h1 className="individual-listing-title">{hosting?.title}</h1>
+                </div>
                 <div>
                     <p>{hosting?.city}, {hosting?.state}, {hosting?.country}</p>
                     </div>
                 </div>
                   <div className="images-container">
                     <div className="image-main">
-                        <img id="pic1" src={hosting?.Images[0].pic1} alt=""></img>
+                        <img id="pic1" src={hosting?.Images[0]?.pic1} alt=""></img>
                     </div>
                     <div className="images-left">
                         <div className="image1">
-                            <img id="pic2" src={hosting?.Images[0].pic2} alt=""></img>
+                            <img id="pic2" src={hosting?.Images[0]?.pic2} alt=""></img>
                         </div>
                         <div className="image2">
-                            <img id="pic3" src={hosting?.Images[0].pic3} alt=""></img>
+                            <img id="pic3" src={hosting?.Images[0]?.pic3} alt=""></img>
                         </div>
 
                     </div>
@@ -46,7 +48,7 @@ function IndividualListing(){
                 <div className="listing-booking-content">
                     <div className="listing-content-left">
                         <div className="hosted-by">
-                            <h2>Tiny house hosted by {hosting?.User.firstName} {hosting?.User.lastName}</h2>
+                            <h2>Tiny house hosted by {hosting?.User?.firstName} {hosting?.User?.lastName}</h2>
                         </div>
                         <div    className="listing-home">
                             <div>

@@ -11,9 +11,6 @@ function List(){
     const hostings = useSelector((state)=> Object.values(state.hosting))
     const hostingId = hostings.id
 
-    useEffect(() => {
-        dispatch(getHostings())
-    }, [dispatch])
 
 
 
@@ -32,16 +29,16 @@ function List(){
                     {hostings.map(hosting => (
                     <div className="list-cards-content" key={hosting.id}>
                         <div className="list-cards-content-img">
-                            <img src={hosting.Images[0].pic1} alt=""></img>
+                            <img src={hosting?.Images[0]?.pic1} alt=""></img>
                         </div>
                         <div className="list-cards-content-left">
                             <div>
-                                <h1> {hosting.title}</h1>
+                                <h1> {hosting?.title}</h1>
                             </div>
                             <hr className="line-seperation"/>
                             <div className="list-descriptions">
-                                <h2> {hosting.guest} guests · {hosting.bed} bed · {hosting.bathroom} bath   </h2>
-                                {hosting.pet?
+                                <h2> {hosting?.guest} guests · {hosting?.bed} bed · {hosting?.bathroom} bath   </h2>
+                                {hosting?.pet?
                                  <h2>
                                     pet friendly: yes
                                  </h2>
@@ -56,7 +53,7 @@ function List(){
                                     <h2>Star</h2>
                                 </div>
                                 <div>
-                                    <h2>${hosting.price}/night</h2>
+                                    <h2>${hosting?.price}/night</h2>
                                 </div>
                             </div>
                         </div>
