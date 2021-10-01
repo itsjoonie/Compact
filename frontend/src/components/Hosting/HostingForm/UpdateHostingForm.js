@@ -32,7 +32,6 @@ function UpdateHostingForm(){
     const handleUpdate = async (e) => {
         e.preventDefault();
         const payload = {
-            userId,
             title,
             description,
             city,
@@ -47,7 +46,7 @@ function UpdateHostingForm(){
 
         let editHosting = await dispatch(updateHosting(payload, hosting?.id))
         if(editHosting){
-            history.push(`/hostings`)
+            history.push(`/listing/${hosting?.id}`)
         }
     }
 

@@ -43,9 +43,9 @@ router.post('/new', requireAuth, asyncHandler(async (req, res) => {
 
 router.put('/:id', requireAuth, asyncHandler(async (req, res, next) => {
    const id = req.params.id;
+   console.log("BACKEND ID", id)
    const hosting = await Hosting.findByPk(id);
-   const {userId, title, description, city, state, country, guest, pet, bed, bathroom, price} = req.body;
-   const updateHosting= await Hosting.update(req.body);
+   const updateHosting= await hosting.update({userId, title, description, city, state, country, guest, pet, bed, bathroom, price});
    return res.json(updateHosting);
 }));
 

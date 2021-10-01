@@ -38,8 +38,9 @@ function HostingForm(){
         }
 
         let newHosting = await dispatch(createHosting(payload))
+        console.log(newHosting.hosting.id, "WHAT IS NEWHOSTING")
         if(newHosting){
-            history.push(`/hostings`)
+            history.push(`/application/hosting/images/${newHosting.hosting.id}`)
         }
     }
 

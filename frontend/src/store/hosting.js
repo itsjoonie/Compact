@@ -8,6 +8,7 @@ const GET_HOSTING = 'hostings/HOSTING'
 const UPDATE_HOSTING = 'hostings/UPDATE_HOSTING'
 const DELETE_HOSTING = 'hostings/DELETE_HOSTING'
 
+
 //action creators 
 const addHosting = hosting => ({
     type: ADD_HOSTING,
@@ -33,6 +34,9 @@ const deleteHosting = hostingId => ({
     type: DELETE_HOSTING,
     hostingId
 })
+
+
+
 
 
 // thunks 
@@ -74,8 +78,9 @@ export const createHosting = (form) => async dispatch =>{
 
 }
 
-export const updateHosting = (hostingId, form) => async dispatch =>{
-    const response = await csrfFetch(`/api/hostings/${hostingId}`, {
+export const updateHosting = (form, id) => async dispatch =>{
+    
+    const response = await csrfFetch(`/api/hostings/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -83,11 +88,13 @@ export const updateHosting = (hostingId, form) => async dispatch =>{
         body: JSON.stringify(form)
     });
     const hosting = await response.json();
+    console.log("PLEASE", hosting)
     if(response.ok){
         
         dispatch(editHosting(hosting));
+        return hosting
     }
-    return hosting
+    
 }
 
 export const deleteOneHosting = (id) => async dispatch =>{
@@ -96,6 +103,9 @@ export const deleteOneHosting = (id) => async dispatch =>{
     });
     dispatch(deleteHosting(id))
 } 
+
+
+
 
 let initialState = {}
 
