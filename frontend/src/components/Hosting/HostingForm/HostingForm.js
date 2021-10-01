@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import * as sessionActions from "../../../store/session";
 import {createHosting} from "../../../store/hosting";
 import "./HostingForm.css"
@@ -171,9 +171,17 @@ function HostingForm(){
                         </div>
                         <input className="hosting-input-box"
                         type="text" name="price" value={price}  onChange={(e) => setPrice(e.target.value)}/>
-                    </div> 
-                    <button type="submit">submit</button>   
-                    <button >Cancel</button>               
+                    </div>
+                    <div id="hosting-btns">
+                        <div>
+                            <NavLink to="/">
+                                <button className="hosting-btn">Cancel</button>  
+                            </NavLink> 
+                        </div>
+                        <div>
+                            <button className="hosting-btn" type="submit">Next</button> 
+                        </div> 
+                    </div>           
                 </form>
             </div>
 

@@ -10,6 +10,7 @@ import SplashPage from "./components/SplashPage/Splash";
 import IndividualListing from "./components/IndividualListingPage/IndividualListing";
 import List from "./components/Hosting/ListPage/List";
 import HostingForm from "./components/Hosting/HostingForm/HostingForm";
+import ImageForm from "./components/Hosting/HostingForm/ImageForm";
 
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
           </Route>
           <Route path="/application/hosting" exact>
             <HostingForm/> 
+          </Route>
+          <Route path="/application/hosting/images" exact>
+            <ImageForm/> 
           </Route>
           <Route path="/booking" exact>
               
