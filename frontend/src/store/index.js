@@ -3,12 +3,14 @@ import thunk from "redux-thunk";
 import sessionReducer from './session';
 import hostingReducer from './hosting';
 import imageReducer from './image';
+import bookingReducer from './booking';
 
 const rootReducer = combineReducers({
   // add reducer functions here
   session: sessionReducer,
   hosting: hostingReducer,
   image: imageReducer,
+  booking: bookingReducer,
 });
 
 let enhancer;

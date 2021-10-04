@@ -2,11 +2,11 @@ import {csrfFetch} from './csrf';
 
 //action types
 
-const ADD_HOSTING = 'hostings/ADD_HOSTING';
-const LOAD_HOSTINGS = 'hostings/LOAD_HOSTINGS';
-const GET_HOSTING = 'hostings/HOSTING'
-const UPDATE_HOSTING = 'hostings/UPDATE_HOSTING'
-const DELETE_HOSTING = 'hostings/DELETE_HOSTING'
+const ADD_HOSTING = "hostings/ADD_HOSTING";
+const LOAD_HOSTINGS = "hostings/LOAD_HOSTINGS";
+const GET_HOSTING = "hostings/HOSTING";
+const UPDATE_HOSTING = "hostings/UPDATE_HOSTING";
+const DELETE_HOSTING = "hostings/DELETE_HOSTING"
 
 
 //action creators 
