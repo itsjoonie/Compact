@@ -117,11 +117,15 @@ console.log(diffDays + " days");
                                     <div className="guestInput">
                                             <label value={guest}>{guest}</label>
                                     </div>
+                                    
                                 <button onClick={guestCounter}>
+                                    
                                 <i class="fas fa-user-plus"></i>
                                 </button>
+                                
                             </div>
                         </div>
+                        <div className="pay-later"><p>*reserve now pay later!</p></div>
                     </div>
                     <button className="bookingBtn" type="submit">RESERVE NOW!</button>
                     {/* <div>

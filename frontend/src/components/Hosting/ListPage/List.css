@@ -68,8 +68,9 @@
 
 .listing-links{
     text-decoration: none;
+    color: black;
 }
 .listing-links:visited{
-    color: black;
+    color: rgb(40, 97, 133);
 }
 

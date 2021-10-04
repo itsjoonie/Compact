@@ -4,7 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import "./IndividualListing.css"
 import {getHostings, deleteOneHosting} from "../../store/hosting"
-import { getBookings } from "../../store/booking";
+import { getBookings, removeBooking} from "../../store/booking";
 import {getReviews} from "../../store/review"
 import BookingForm from "../Booking/BookingForm";
 
@@ -21,6 +21,11 @@ function IndividualListing(){
     // ))
 
     const bookings = hosting?.Bookings
+    let allBooking = Object.values(useSelector(state => state.booking));
+
+    console.log("what is alllll", allBooking)
+
+    //if hosting id === booking.hostingId and sessionUser === booking.userId then delete 
 
     console.log(bookings, "what is booking")
 
@@ -33,6 +38,10 @@ function IndividualListing(){
         dispatch(getBookings())
         // dispatch(getReviews())
     }, [dispatch])
+
+    const handleDelete = (e) =>{
+        dispatch(removeBooking(e.target.id))
+    }
 
 
     return (
@@ -112,7 +121,15 @@ function IndividualListing(){
                         <BookingForm/>
                         <div className="reservation">
                             {bookings?.map(booking => (<div key={booking.id}>{
-                                booking.userId == sessionUser ? <h3> You have reserved this tiny home from: {booking.startDate} to {booking.endDate}</h3>
+                                booking.userId == sessionUser ? 
+                                    <div>
+                                        <div>
+                                            <h3> You have reserved this tiny home from: {booking.startDate} to {booking.endDate}</h3>
+                                            <button id ={booking?.id}className="cancle-reservation" onClick={handleDelete}>Cancel Reservation!</button>
+                                        </div>
+                                        
+                                    </div>
+                            
                             :
                             <></>
                             }</div>))
