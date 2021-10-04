@@ -4,6 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import "./IndividualListing.css"
 import {getHostings, deleteOneHosting} from "../../store/hosting"
+import { getBookings } from "../../store/booking";
 import BookingForm from "../Booking/BookingForm";
 
 

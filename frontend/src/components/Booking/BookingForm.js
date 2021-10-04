@@ -6,11 +6,16 @@ import { useParams, useHistory } from "react-router-dom";
 import "./BookingForm.css"
 import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css"
+import { createBooking } from "../../store/booking";
 
 function BookingForm() {
+    const dispatch = useDispatch();
+    let history = useHistory();
    
     const id = useParams().id
     const hosting = useSelector((state) => state.hosting[id]) 
+    const hostingId = hosting?.id
+    const userId = useSelector(state => state.session.user.id); 
     console.log("stayhereree", hosting)
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
@@ -46,7 +51,23 @@ function BookingForm() {
         };
     }
 
+const handleSubmit = async (e) => {
+        e.preventDefault();
+        const payload = {
+            hostingId,
+            userId,
+            startDate,
+            endDate,
+            guest
+        }
 
+        let newBooking = await dispatch(createBooking(payload))
+       
+        if(newBooking){
+            history.push(`/`)
+        }
+    }
+ 
 
 
 
@@ -66,7 +87,7 @@ console.log(diffDays + " days");
         <div className="booking-form-page">
             <div>
             <h1>Stay Here?</h1>
-                <form className="booking-form">
+                <form className="booking-form" onSubmit={handleSubmit}>
                     <div className="date-inputs">
                         <div>
                             <label>Check-in</label>
@@ -74,6 +95,7 @@ console.log(diffDays + " days");
                                 selected={startDate}
                                 minDate={new Date()}
                                 onChange={handleCheckInDate}
+                                value={startDate}
                             />
                         </div>
                     <div>
@@ -82,6 +104,7 @@ console.log(diffDays + " days");
                         selected={endDate}
                         minDate={startDate}
                         onChange={handleCheckOutDate}
+                        value={endDate}
                     />
                     </div>
                         <div className="guestNum">
@@ -92,7 +115,7 @@ console.log(diffDays + " days");
                                     <button onClick={guestCounterMinus}>
                                         <i class="fas fa-user-minus"></i></button>
                                     <div className="guestInput">
-                                            <label>{guest}</label>
+                                            <label value={guest}>{guest}</label>
                                     </div>
                                 <button onClick={guestCounter}>
                                 <i class="fas fa-user-plus"></i>
@@ -100,7 +123,7 @@ console.log(diffDays + " days");
                             </div>
                         </div>
                     </div>
-                    <button className="bookingBtn">RESERVE NOW!</button>
+                    <button className="bookingBtn" type="submit">RESERVE NOW!</button>
                     {/* <div>
                         <label>Total days</label>
                         <label>{setDay(setEndDate)}</label>

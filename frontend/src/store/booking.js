@@ -31,7 +31,7 @@ export const getBookings = () => async dispatch =>{
 
 export const createBooking= (form) => async dispatch =>{
     console.log(form, "what is this")
-    const response = await csrfFetch(`/api/hostings/new`, {
+    const response = await csrfFetch(`/api/bookings/new`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
