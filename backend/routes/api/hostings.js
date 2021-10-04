@@ -14,8 +14,14 @@ const review = require('../../db/models/review');
 //get all hostings
 router.get('/', asyncHandler(async (req, res, next) => { 
    const hostings = await Hosting.findAll({
-      include: [Image, User]
-   });
+       include:[Image, User, {
+          model: Booking,
+          include:{
+             model: Review,
+             include: [User, Booking]
+          }
+       }]
+      });
    return res.json(hostings);
 
 }));

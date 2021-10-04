@@ -50,6 +50,7 @@ export const removeBooking = (id) => async dispatch =>{
     const res = await csrfFetch(`/api/bookings/${id}`, {
         method: "DELETE"
     });
+    const data = res.json()
     dispatch(deleteBooking(id))
 }
 

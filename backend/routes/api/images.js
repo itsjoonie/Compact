@@ -17,7 +17,7 @@ router.post('/new', requireAuth, asyncHandler( async(req, res) =>{
     
     const {hostingId, pic1, pic2, pic3, pic4, pic5, pic6} = req.body;
     const image = await Image.create(req.body);
-    return res.json(image);
+    return res.json({image});
 }))
 
 
