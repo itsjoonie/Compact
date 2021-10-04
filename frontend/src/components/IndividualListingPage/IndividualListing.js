@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import "./IndividualListing.css"
 import {getHostings, deleteOneHosting} from "../../store/hosting"
 import { getBookings } from "../../store/booking";
+import {getReviews} from "../../store/review"
 import BookingForm from "../Booking/BookingForm";
+
 
 
 
@@ -13,11 +15,23 @@ function IndividualListing(){
     const dispatch = useDispatch()
     const id = useParams().id
     const hosting = useSelector((state) => state.hosting[id]) 
-    console.log("what is this", hosting)
+    const sessionUser= useSelector(state => state.session.user.id);
+    // const booking = hosting?.Bookings.filter(booking => (
+    //     booking.userId == userId
+    // ))
+
+    const bookings = hosting?.Bookings
+
+    console.log(bookings, "what is booking")
+
+    console.log("what is hostingggg", hosting)
+
 
 
     useEffect(() => {
         dispatch(getHostings())
+        dispatch(getBookings())
+        // dispatch(getReviews())
     }, [dispatch])
 
 
@@ -90,10 +104,22 @@ function IndividualListing(){
                         <div className="listing-description-info">
                             <p>{hosting?.description}</p>
                         </div>
+                        <div>
+                        <h3>Reviews</h3>
+                        </div>
                     </div>
                       <div   className="booking-component">
-                    <BookingForm/>
-                </div>
+                        <BookingForm/>
+                        <div className="reservation">
+                            {bookings?.map(booking => (<div key={booking.id}>{
+                                booking.userId == sessionUser ? <h3> You have reserved this tiny home from: {booking.startDate} to {booking.endDate}</h3>
+                            :
+                            <></>
+                            }</div>))
+                            }
+                            
+                        </div>
+                    </div>
                 </div>
                
            </div>

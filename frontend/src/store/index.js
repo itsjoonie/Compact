@@ -4,6 +4,7 @@ import sessionReducer from './session';
 import hostingReducer from './hosting';
 import imageReducer from './image';
 import bookingReducer from './booking';
+import reviewReducer from "./review";
 
 const rootReducer = combineReducers({
   // add reducer functions here
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   hosting: hostingReducer,
   image: imageReducer,
   booking: bookingReducer,
+  review: reviewReducer
 });
 
 let enhancer;
