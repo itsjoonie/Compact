@@ -27,7 +27,9 @@ function List(){
             <div className="list-container">
                 <div>
                     {hostings.map(hosting => (
+                        <Link className="listing-links" to={`/listing/${hosting.id}`}>
                     <div className="list-cards-content" key={hosting.id}>
+                        
                         <div className="list-cards-content-img">
                             <img src={hosting?.Images[0]?.pic1} alt=""></img>
                         </div>
@@ -57,8 +59,9 @@ function List(){
                                 </div>
                             </div>
                         </div>
-                
+            
                     </div>
+                    </Link>
                     )
                     )}
                 </div>

@@ -66,4 +66,10 @@
     
 }
 
+.listing-links{
+    text-decoration: none;
+}
+.listing-links:visited{
+    color: black;
+}
 
