@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import logo from "./logo.png"
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -33,7 +34,7 @@ function Navigation({ isLoaded }){
 
         <div className="logo-container">
           <NavLink to="/">
-            <h1>LOGO HERE</h1>
+            <img id="compactLogo" src={logo} alt="logo"/>
           </NavLink>
         </div>
         <div className="Navbar-links">
