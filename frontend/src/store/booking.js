@@ -15,9 +15,9 @@ const addBooking = booking => ({
     booking
 })
 
-const deleteBooking = booking => ({
+const deleteBooking = bookingId => ({
     type: DELETE_BOOKING,
-    booking
+    bookingId
 })
 
 
@@ -64,6 +64,10 @@ const bookingReducer = (state = initialState, action) => {
                 ...state, 
                 ...Object.fromEntries(action.bookings.map(booking => [booking.id, booking]))
             }
+         case DELETE_BOOKING:
+            const newState = {...state};
+            delete newState[action.bookingId];
+            return newState;
         default:
             return state;
     }

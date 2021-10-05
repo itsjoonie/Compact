@@ -20,14 +20,14 @@ function IndividualListing(){
     //     booking.userId == userId
     // ))
 
-    const bookings = hosting?.Bookings
+  
     let allBooking = Object.values(useSelector(state => state.booking));
 
     console.log("what is alllll", allBooking)
 
     //if hosting id === booking.hostingId and sessionUser === booking.userId then delete 
 
-    console.log(bookings, "what is booking")
+
 
     console.log("what is hostingggg", hosting)
 
@@ -120,7 +120,7 @@ function IndividualListing(){
                       <div   className="booking-component">
                         <BookingForm/>
                         <div className="reservation">
-                            {bookings?.map(booking => (<div key={booking.id}>{
+                            {allBooking?.map(booking => (<div key={booking.id}>{
                                 booking.userId == sessionUser ? 
                                     <div>
                                         <div>
