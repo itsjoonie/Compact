@@ -17,7 +17,8 @@ const addReview = review => ({
 
 
 export const getReviews = () => async dispatch =>{
-    const response = await csrfFetch(`/api/reviews`);
+    const response = await csrfFetch(`/api/reviews/`);
+    console.log("WHAT IS RESPONSE", response)
     if(response.ok){
         const reviews = await response.json();
         dispatch(loadReviews(reviews))

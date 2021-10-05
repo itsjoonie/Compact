@@ -18,6 +18,11 @@ router.get('/:id', asyncHandler(async(req, res, next) =>{
     return res.json(review)
 }))
 
+router.get('/', asyncHandler(async(req, res, next) => {
+    const reviews = await Review.findAll();
+    return res.json(reviews)
+}))
+
 router.post('/new', requireAuth, asyncHandler(async (req, res) =>{
     const {userId, bookingId, starRating, reviewText} = req.body
     const review = await Review.create(req.body);

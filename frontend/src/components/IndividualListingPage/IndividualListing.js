@@ -19,11 +19,13 @@ function IndividualListing(){
     // const booking = hosting?.Bookings.filter(booking => (
     //     booking.userId == userId
     // ))
-
-  
     let allBooking = Object.values(useSelector(state => state.booking));
 
+    const reviews = useSelector(state => state.review)
+
     console.log("what is alllll", allBooking)
+
+    console.log("what is reviews", reviews)
 
     //if hosting id === booking.hostingId and sessionUser === booking.userId then delete 
 
@@ -36,7 +38,7 @@ function IndividualListing(){
     useEffect(() => {
         dispatch(getHostings())
         dispatch(getBookings())
-        // dispatch(getReviews())
+        dispatch(getReviews())
     }, [dispatch])
 
     const handleDelete = (e) =>{
