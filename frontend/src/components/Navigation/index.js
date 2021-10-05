@@ -23,12 +23,30 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    // <ul>
+    //   <li>
+    //     <NavLink exact to="/">Home</NavLink>
+    //     {isLoaded && sessionLinks}
+    //   </li>
+    // </ul>
+    <div className="Navbar">
+
+        <div className="logo-container">
+          <NavLink to="/">
+            <h1>LOGO HERE</h1>
+          </NavLink>
+        </div>
+        <div className="Navbar-links">
+          <div>
+            <NavLink to="/login"><button className="navlink-btn navlogin-btn">Log In</button></NavLink>
+          </div>
+          <div>
+            <NavLink to="/signup"><button className="navlink-btn navsignup-btn">Sign Up</button></NavLink>
+          </div>
+
+        </div>
+
+    </div>
   );
 }
 

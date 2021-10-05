@@ -1,0 +1,41 @@
+.Navbar{
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    filter: drop-shadow(0px 8px 4px rgba(232, 233, 233, 0.906));
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 45px;
+
+    
+}
+
+
+.Navbar-links{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.logo-container{
+    margin-left: 40px;
+}
+
+.navsignup-btn{
+    margin-right: 40px;
+}
+.navlogin-btn{
+    margin-right: 20px;
+}
+
+
+
+.navlink-btn{
+
+    height: 40px;
+    width: 120px;
+}
