@@ -1,14 +1,24 @@
 // frontend/src/components/Navigation/index.js
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import * as sessionActions from '../../store/session';
 import ProfileButton from './ProfileButton';
 import logo from "./logo.png"
 import './Navigation.css';
+import Modal from 'react-modal';
+
 
 function Navigation({ isLoaded }){
+  const dispatch = useDispatch()
   const sessionUser = useSelector(state => state.session.user);
 
+  const logout = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.logout());
+  };
+
+   
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -32,11 +42,14 @@ function Navigation({ isLoaded }){
     // </ul>
     <div className="Navbar">
 
-        <div className="logo-container">
+       
+        {!sessionUser ?
+        <>
+          <div className="logo-container">
           <NavLink to="/">
             <img id="compactLogo" src={logo} alt="logo"/>
           </NavLink>
-        </div>
+          </div>
         <div className="Navbar-links">
           <div>
             <NavLink to="/login"><button className="navlink-btn navlogin-btn">Log In</button></NavLink>
@@ -44,8 +57,27 @@ function Navigation({ isLoaded }){
           <div>
             <NavLink to="/signup"><button className="navlink-btn navsignup-btn">Sign Up</button></NavLink>
           </div>
-
         </div>
+        </>
+
+        :
+        <>
+          <div className="logo-container">
+          <NavLink to="/">
+            <img id="compactLogo" src={logo} alt="logo"/>
+          </NavLink>
+          </div>
+        <div className="Navbar-links">
+          <div>
+            <NavLink to="/login"><button className="navlink-btn navlogin-btn">Log In</button></NavLink>
+          </div>
+          <div>
+            <NavLink to="/signup"><button className="navlink-btn navsignup-btn" onClick={logout}>Log Out</button></NavLink>
+          </div>
+        </div>
+        </>
+        }
+      
 
     </div>
   );

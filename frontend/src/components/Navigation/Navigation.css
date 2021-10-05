@@ -9,14 +9,14 @@
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 45px;
+
 
     
 }
 
 #compactLogo{
     height: 50px;
-    width: 165px;
+    width: 180px;
     filter: sepia(100%) hue-rotate(170deg) saturate(600%) brightness(130%) opacity(80%);
 }
 
