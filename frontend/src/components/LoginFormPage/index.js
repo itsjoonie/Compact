@@ -92,6 +92,7 @@ function LoginFormPage() {
         </ul> */}
         <div className="form-inputs success error">
         <label>Username or Email</label>
+        <i class="far fa-envelope"></i>
           <input
             id="login-name"
             type="text"
@@ -99,12 +100,13 @@ function LoginFormPage() {
             onChange={(e) => setCredential(e.target.value)}
            
           />
-          <i class="fas fa-check-circle"></i>
-			    <i class="fas fa-exclamation-circle"></i>
+          <i className="fas fa-check-circle"></i>
+			    <i className="fas fa-exclamation-circle"></i>
           <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
         </div>
         <div className="form-inputs success error">
           <label>Password</label>
+          <i class="fas fa-unlock-alt"></i>
             <input
               id="login-password"
               type="password"

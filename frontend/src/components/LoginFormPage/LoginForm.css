@@ -67,11 +67,20 @@ font-family: 'Fjalla One', sans-serif; */
     border-color: #e74c3c;
 } */
 
-.form-inputs i {
+.fa-check-circle,
+.fa-exclamation-circle {
     position: absolute;
     top: 40px;
     right: 10px;
     visibility: hidden;
+}
+
+.fa-envelope,
+.fa-unlock-alt{
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    color: rgb(26, 26, 26);
 }
 
 /* .form-inputs.success i.fa-check-circle {
