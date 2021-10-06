@@ -1,7 +1,7 @@
 
 
 .login-form-header {
-    background-color: #f7f7f7;
+    background-color: #dfdede68;
     border-bottom:  1px solid #f0f0f0;
     padding: 20px 40px
 }
@@ -73,12 +73,41 @@
 }
 
 .login-form-btn{
-    background-color: plum;
-    border: 2px solid plum;
+    background-color: #a8dadc;
+    border: 2px solid #a8dadc;
     color: #fff;
     display: block;
     width: 100%;
     padding: 13px;
     font-size: 16px;
-    border-radius: 4%;
+
+}
+
+.login-bottom{
+    padding: 1px 40px 10px 40px
+}
+#or {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid rgb(75, 75, 75); 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+} 
+
+#or span { 
+    background:#fff; 
+    padding:0 10px; 
+    color: rgb(2, 2, 2);
+}
+
+#question{
+    margin-bottom: 5px;
+}
+
+.login-signup{
+
+}
+
+.login-signup p{
+    text-align: center;
 }

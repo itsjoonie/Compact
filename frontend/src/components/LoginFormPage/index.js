@@ -18,6 +18,9 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     width: '500px',
   },
+  overlay:{
+    backgroundColor: 'rgba(2, 2, 2, 0.680)'
+  }
 };
 
 const form = document.getElementById("loginForm");
@@ -107,6 +110,16 @@ function LoginFormPage() {
         </div>
           <button className="login-form-btn" type="submit">Log In</button>
       </form>
+      <div className="login-bottom">
+        <p id="or"><span>or</span></p>
+        <p id="question">Don't have an account?</p>
+        <button className="login-form-btn" type="submit">Log In as Demo User</button>
+        <div className="login-signup">
+        <p>or</p>
+        <button className="login-form-btn" type="submit">Signup for an Account</button>
+        </div>
+
+      </div>
     </div>
     </Modal>
   </div>
