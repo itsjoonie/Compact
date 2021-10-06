@@ -23,11 +23,8 @@ const customStyles = {
   }
 };
 
-const form = document.getElementById("loginForm");
-const username = document.getElementById("login-name");
-const password = document.getElementById("login-password");
 
-
+Modal.setAppElement('#root');
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -68,7 +65,7 @@ function LoginFormPage() {
   }
 
   return (
-    <div className="login-form-modal">
+    <div id="login-form-modal">
     <button className="navlink-btn navlogin-btn" onClick={openModal}>Log In</button>
     <Modal
         isOpen={modalIsOpen}
@@ -78,7 +75,17 @@ function LoginFormPage() {
         contentLabel="Example Modal"
       >
       <div className="login-form-page">
-        <div className="login-form-header"><h2>LOGIN FORM</h2></div>
+        <div className="closeModal">
+          <i className="fas fa-times" onClick={closeModal}></i>
+        </div>
+        <div className="login-form-header">
+          <div>
+            <h2>Welcome! </h2>
+          </div>
+          <div>
+            <p>Sign into your account here.</p>
+            </div>
+        </div>
       <form className="login-form" id="loginForm" onSubmit={handleSubmit}>
         {/* <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -108,15 +115,15 @@ function LoginFormPage() {
             <i class="fas fa-exclamation-circle"></i>
             <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
         </div>
-          <button className="login-form-btn" type="submit">Log In</button>
+          <button className="login-form-btn" type="submit">Login</button>
       </form>
       <div className="login-bottom">
         <p id="or"><span>or</span></p>
         <p id="question">Don't have an account?</p>
-        <button className="login-form-btn" type="submit">Log In as Demo User</button>
+        <button className="login-other-btn" >Login as Demo User</button>
         <div className="login-signup">
         <p>or</p>
-        <button className="login-form-btn" type="submit">Signup for an Account</button>
+        <button className="login-other-btn" >Create an Account</button>
         </div>
 
       </div>

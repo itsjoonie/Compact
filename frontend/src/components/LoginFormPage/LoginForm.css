@@ -1,12 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+/* font-family: 'Quicksand', sans-serif;
+font-family: 'Fjalla One', sans-serif; */
+.closeModal{
+    display: flex;
+    flex-direction: row-reverse
+}
 
-
+.closeModal i{
+    cursor: pointer;
+}
 .login-form-header {
     background-color: #dfdede68;
     border-bottom:  1px solid #f0f0f0;
-    padding: 20px 40px
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.login-form-header {
-    margin: 0;
+.login-form-header h2{
+    margin-bottom: 3px;
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    font-size: 30px;
+
+}
+
+.login-form-header div p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: large
+    
 }
 
 .login-form {
@@ -75,12 +99,37 @@
 .login-form-btn{
     background-color: #a8dadc;
     border: 2px solid #a8dadc;
+    font-weight: bolder;
+    letter-spacing: 2px;
+
+    
+}
+
+.login-form-btn:hover{
+    background-color: #7edee1e7;
+    letter-spacing: 4px;
+
+   
+}
+
+.login-other-btn:hover{
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    background-color: rgb(160, 197, 199);
+}
+.login-other-btn{
+    background-color: rgba(160, 197, 199, 0.913);
+    border: 2px solid #a8dadc;
+}
+
+.login-form-btn,
+.login-other-btn{
+  
     color: #fff;
     display: block;
     width: 100%;
     padding: 13px;
     font-size: 16px;
-
 }
 
 .login-bottom{
