@@ -7,6 +7,7 @@ import ProfileButton from './ProfileButton';
 import logo from "./logo.png"
 import './Navigation.css';
 import Modal from 'react-modal';
+import LoginFormPage from '../LoginFormPage';
 
 
 function Navigation({ isLoaded }){
@@ -52,7 +53,7 @@ function Navigation({ isLoaded }){
           </div>
         <div className="Navbar-links">
           <div>
-            <NavLink to="/login"><button className="navlink-btn navlogin-btn">Log In</button></NavLink>
+            <LoginFormPage/>
           </div>
           <div>
             <NavLink to="/signup"><button className="navlink-btn navsignup-btn">Sign Up</button></NavLink>
@@ -69,7 +70,7 @@ function Navigation({ isLoaded }){
           </div>
         <div className="Navbar-links">
           <div>
-            <NavLink to="/login"><button className="navlink-btn navlogin-btn">Log In</button></NavLink>
+            
           </div>
           <div>
             <NavLink to="/signup"><button className="navlink-btn navsignup-btn" onClick={logout}>Log Out</button></NavLink>
