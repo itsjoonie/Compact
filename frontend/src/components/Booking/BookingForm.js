@@ -15,7 +15,7 @@ function BookingForm() {
     const id = useParams().id
     const hosting = useSelector((state) => state.hosting[id]) 
     const hostingId = hosting?.id
-    const userId = useSelector(state => state.session.user.id); 
+    const userId = useSelector(state => state.session.user?.id); 
     console.log("stayhereree", hosting)
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);

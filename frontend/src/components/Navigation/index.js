@@ -1,5 +1,5 @@
 // frontend/src/components/Navigation/index.js
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
@@ -14,6 +14,9 @@ import SignupFormPage from '../SignupFormPage';
 function Navigation({ isLoaded }){
   const dispatch = useDispatch()
   const sessionUser = useSelector(state => state.session.user);
+  const [modal1, setModal1] = useState(false);
+  const [modal2, setModal2] = useState(false);
+
 
   const logout = (e) => {
     e.preventDefault();
@@ -54,10 +57,11 @@ function Navigation({ isLoaded }){
           </div>
         <div className="Navbar-links">
           <div>
-            <LoginFormPage/>
+
+            <LoginFormPage modal1={modal1} setModal1={setModal1}/>
           </div>
           <div>
-            <SignupFormPage/>
+            <SignupFormPage modal2={modal2} setModal2={setModal2} setModal1={setModal1}/>
           </div>
         </div>
         </>

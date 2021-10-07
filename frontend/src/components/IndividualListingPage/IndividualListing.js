@@ -16,7 +16,7 @@ function IndividualListing(){
     const dispatch = useDispatch()
     const id = useParams().id
     const hosting = useSelector((state) => state.hosting[id]) 
-    const sessionUser= useSelector(state => state.session.user.id);
+    const sessionUser= useSelector(state => state.session.user?.id);
     // const booking = hosting?.Bookings.filter(booking => (
     //     booking.userId == userId
     // ))

@@ -22,7 +22,7 @@ const customStyles = {
   }
 };
 
-function SignupFormPage() {
+function SignupFormPage({modal2, setModal2, setModal1}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [firstName, setFirstName] = useState("");
@@ -33,20 +33,19 @@ function SignupFormPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const [modalIsOpen, setIsOpen] = useState(false);
-
+  
   function openModal() {
-    setIsOpen(true);
+    setModal2(true);
   }
 
 
   function closeModal() {
-    setIsOpen(false);
+    setModal2(false);
   }
 
-  function closeOpen(){
-    setIsOpen(false);
-
+  function openLoginForm(){
+    setModal1(true)
+    setModal2(false)
   }
 
   if (sessionUser) return <Redirect to="/" />;
@@ -68,7 +67,7 @@ function SignupFormPage() {
     <>
       <button className="navlink-btn navsignup-btn" onClick={openModal}>Sign Up</button>
       <Modal
-          isOpen={modalIsOpen}
+          isOpen={modal2}
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Signup Modal"
@@ -174,7 +173,7 @@ function SignupFormPage() {
       </form>
       <div className="login-bottom">
         <p id="or"><span>or</span></p>
-        <p id="question">Already have an account?</p>  <span><LoginFormPage/></span>
+        <p id="question">Already have an account?</p>  <span><button onClick={openLoginForm}>Login</button></span>
       </div>
       </div>
       </Modal>

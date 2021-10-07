@@ -26,7 +26,7 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-function LoginFormPage() {
+function LoginFormPage({modal1, setModal1}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
@@ -34,15 +34,13 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([]);
 
 
-  const [modalIsOpen, setIsOpen] = useState(false);
-
   function openModal() {
-    setIsOpen(true);
+    setModal1(true);
   }
 
 
   function closeModal() {
-    setIsOpen(false);
+    setModal1(false);
   }
 
   if (sessionUser) return (
@@ -64,7 +62,7 @@ function LoginFormPage() {
     <div id="login-form-modal">
     <button className="navlink-btn navlogin-btn" onClick={openModal}>Log In</button>
     <Modal
-        isOpen={modalIsOpen}
+        isOpen={modal1}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Login Modal"
