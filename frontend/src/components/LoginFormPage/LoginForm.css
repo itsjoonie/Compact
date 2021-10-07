@@ -55,7 +55,7 @@ font-family: 'Fjalla One', sans-serif; */
     border-radius: 4px;
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 10px 35px;
     font-size: 14px;
 }
 
@@ -70,7 +70,7 @@ font-family: 'Fjalla One', sans-serif; */
 .fa-check-circle,
 .fa-exclamation-circle {
     position: absolute;
-    top: 40px;
+    top: 36px;
     right: 10px;
     visibility: hidden;
 }
@@ -78,7 +78,7 @@ font-family: 'Fjalla One', sans-serif; */
 .fa-envelope,
 .fa-unlock-alt{
     position: absolute;
-    top: 40px;
+    top: 36px;
     left: 10px;
     color: rgb(26, 26, 26);
 }
