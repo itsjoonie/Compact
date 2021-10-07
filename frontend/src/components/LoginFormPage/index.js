@@ -112,7 +112,7 @@ function LoginFormPage() {
             <i class="fas fa-exclamation-circle"></i>
             <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
         </div>
-          <button className="login-form-btn" type="submit">Login</button>
+          <button className="submit-form-btn" type="submit">Login</button>
       </form>
       <div className="login-bottom">
         <p id="or"><span>or</span></p>

@@ -164,7 +164,7 @@ function SignupFormPage() {
             <i class="fas fa-exclamation-circle"></i>
             <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
         </div>
-          <button className="Submit-form-btn" type="submit">Submit</button>
+          <button className="submit-form-btn" type="submit">Submit</button>
       </form>
       </div>
       </Modal>
