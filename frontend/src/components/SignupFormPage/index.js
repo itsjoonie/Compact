@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 import Modal from 'react-modal';
+import LoginFormPage from "../LoginFormPage";
 
 const customStyles = {
   content: {
@@ -41,6 +42,11 @@ function SignupFormPage() {
 
   function closeModal() {
     setIsOpen(false);
+  }
+
+  function closeOpen(){
+    setIsOpen(false);
+
   }
 
   if (sessionUser) return <Redirect to="/" />;
@@ -85,7 +91,7 @@ function SignupFormPage() {
         </ul> */}
       <div className="form-inputs success error">
         <label>First Name</label>
-        <i class="far fa-envelope"></i>
+        <i className="far fa-user-circle"></i>
           <input
             id="login-name"
             type="text"
@@ -99,7 +105,7 @@ function SignupFormPage() {
 
       <div className="form-inputs success error">
         <label>Last Name</label>
-        <i class="far fa-envelope"></i>
+        <i className="far fa-user-circle"></i>
           <input
             id="login-name"
             type="text"
@@ -113,7 +119,7 @@ function SignupFormPage() {
 
       <div className="form-inputs success error">
         <label>Username</label>
-        <i class="far fa-envelope"></i>
+        <i className="fas fa-user-edit"></i>
           <input
             id="login-name"
             type="text"
@@ -166,6 +172,10 @@ function SignupFormPage() {
         </div>
           <button className="submit-form-btn" type="submit">Submit</button>
       </form>
+      <div className="login-bottom">
+        <p id="or"><span>or</span></p>
+        <p id="question">Already have an account?</p>  <span><LoginFormPage/></span>
+      </div>
       </div>
       </Modal>
     </>

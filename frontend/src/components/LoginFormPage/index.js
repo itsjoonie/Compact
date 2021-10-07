@@ -68,6 +68,7 @@ function LoginFormPage() {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Login Modal"
+        id="login-modal"
       >
       <div className="login-form-page">
         <div className="closeModal">
