@@ -8,6 +8,7 @@ import logo from "./logo.png"
 import './Navigation.css';
 import Modal from 'react-modal';
 import LoginFormPage from '../LoginFormPage';
+import SignupFormPage from '../SignupFormPage';
 
 
 function Navigation({ isLoaded }){
@@ -56,7 +57,7 @@ function Navigation({ isLoaded }){
             <LoginFormPage/>
           </div>
           <div>
-            <NavLink to="/signup"><button className="navlink-btn navsignup-btn">Sign Up</button></NavLink>
+            <SignupFormPage/>
           </div>
         </div>
         </>

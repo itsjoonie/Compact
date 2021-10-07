@@ -33,17 +33,13 @@ function LoginFormPage() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
-  let subtitle;
+
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
     setIsOpen(true);
   }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-
-  }
 
   function closeModal() {
     setIsOpen(false);
@@ -69,10 +65,9 @@ function LoginFormPage() {
     <button className="navlink-btn navlogin-btn" onClick={openModal}>Log In</button>
     <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Login Modal"
       >
       <div className="login-form-page">
         <div className="closeModal">

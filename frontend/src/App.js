@@ -15,6 +15,7 @@ import UpdateHostingForm from "./components/Hosting/HostingForm/UpdateHostingFor
 import {getHostings} from './store/hosting'
 
 
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
