@@ -129,6 +129,9 @@ function IndividualListing(){
                                             <h3> You have reserved this tiny home from: {booking.startDate} to {booking.endDate}</h3>
                                             <button id ={booking?.id}className="cancle-reservation" onClick={handleDelete}>Cancel Reservation!</button>
                                         </div>
+                                        <div>
+                                            <button>Review</button>
+                                        </div>
                                         
                                     </div>
                             

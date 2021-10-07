@@ -61,11 +61,11 @@ const handleSubmit = async (e) => {
             guest
         }
 
-        let newBooking = await dispatch(createBooking(payload))
+       await dispatch(createBooking(payload))
        
-        if(newBooking){
-            history.push(`/`)
-        }
+        // if(newBooking){
+        //     history.push(`/`)
+        // }
     }
  
 

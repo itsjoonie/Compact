@@ -53,6 +53,11 @@ const reviewReducer = (state = initialState, action) => {
                 ...state, 
                 ...Object.fromEntries(action.reviews.map(review => [review.id, review]))
             }
+        case ADD_REVIEW:
+            return{
+                ...state,
+                [action.review.id]: action.review
+            }
         default:
             return state;
     }
