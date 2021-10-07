@@ -7,6 +7,7 @@ import {getHostings, deleteOneHosting} from "../../store/hosting"
 import { getBookings, removeBooking} from "../../store/booking";
 import {getReviews} from "../../store/review"
 import BookingForm from "../Booking/BookingForm";
+import ReviewForm from "../Review/ReviewForm";
 
 
 
@@ -130,7 +131,7 @@ function IndividualListing(){
                                             <button id ={booking?.id}className="cancle-reservation" onClick={handleDelete}>Cancel Reservation!</button>
                                         </div>
                                         <div>
-                                            <button>Review</button>
+                                            <ReviewForm/>
                                         </div>
                                         
                                     </div>

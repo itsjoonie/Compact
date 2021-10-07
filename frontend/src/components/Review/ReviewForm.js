@@ -3,10 +3,10 @@ import { getHostings } from "../../store/hosting";
 import DatePicker from "react-datepicker";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
-import "./BookingForm.css"
+import "./ReviewForm.css"
 import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css"
-import { createReview } from "../../store/booking";
+import { createReview } from "../../store/review";
 
 function ReviewForm(){
     const dispatch = useDispatch();
@@ -34,7 +34,20 @@ function ReviewForm(){
 
     return (
         <>
-            
+        <button>Review</button>
+
+        <form className="review-form" id="reviewForm" onSubmit={handleSubmit}>
+
+            <div className="review-form-inputs success error">
+            <label>Select a star rating!</label>
+            {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
+            </div>
+            <div className="review-form-inputs success error">
+            <label>What do you think?</label>
+                {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
+            </div>
+            <button className="submit-review-btn" type="submit">Submit</button>
+      </form>
         </>
     )
 
