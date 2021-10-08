@@ -26,12 +26,14 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-function LoginFormPage({modal1, setModal1}) {
+function LoginFormPage({modal1, setModal1, setModal2}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
+
+  
 
 
   function openModal() {
@@ -40,6 +42,11 @@ function LoginFormPage({modal1, setModal1}) {
 
 
   function closeModal() {
+    setModal1(false);
+  }
+
+  function openSignUp() {
+    setModal2(true);
     setModal1(false);
   }
 
@@ -57,6 +64,17 @@ function LoginFormPage({modal1, setModal1}) {
         if (data && data.errors) setErrors(data.errors);
       });
   }
+
+  const sessionDemo = () => {
+    const payload = {
+      credential: "demo@user.io",
+      password: 'password',
+    }
+
+    dispatch(sessionActions.login(payload))
+  }
+
+
 
   return (
     <div id="login-form-modal">
@@ -116,10 +134,10 @@ function LoginFormPage({modal1, setModal1}) {
       <div className="login-bottom">
         <p id="or"><span>or</span></p>
         <p id="question">Don't have an account?</p>
-        <button className="login-other-btn" >Login as Demo User</button>
+        <button className="login-other-btn" onClick={sessionDemo}>Login as Demo User</button>
         <div className="login-signup">
         <p>or</p>
-        <button className="login-other-btn" >Create an Account</button>
+        <button className="login-other-btn" onClick={openSignUp}>Create an Account</button>
         </div>
 
       </div>

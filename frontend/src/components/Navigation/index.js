@@ -58,7 +58,7 @@ function Navigation({ isLoaded }){
         <div className="Navbar-links">
           <div>
 
-            <LoginFormPage modal1={modal1} setModal1={setModal1}/>
+            <LoginFormPage modal1={modal1} setModal1={setModal1} setModal2={setModal2}/>
           </div>
           <div>
             <SignupFormPage modal2={modal2} setModal2={setModal2} setModal1={setModal1}/>
