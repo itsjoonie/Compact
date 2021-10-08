@@ -7,7 +7,6 @@ const addImage = image => ({
 })
 
 export const createImage = (form) => async dispatch => {
-    console.log(form, "THUNK FORM")
     const response = await csrfFetch('/api/images/new', {
         method: "POST",
         headers: {
