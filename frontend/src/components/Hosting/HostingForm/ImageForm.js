@@ -25,19 +25,38 @@ function ImageForm(){
         console.log("hosting id pls", hostingId)
         const payload = {
             hostingId,
-            pic1,
+            pic1, //fakepath
             pic2,
             pic3
         }
+     
 
-        let newImage = await dispatch(createImage(payload))
-        console.log(newImage, "new image plsss")
-        if(newImage){
-            history.push(`/listing/${hostingId}`)
-        }
+       await dispatch(createImage(payload))
+        // console.log(newImage, "new image plsss")
+        // if(newImage){
+        //     history.push(`/listing/${hostingId}`)
+        // }
     }
 
     
+    function imageInput1(e){
+
+        const file =e.target.files[0]
+        if(file) setPic1(file)
+
+    }
+
+    function imageInput2(e){
+
+        setPic2(e.target.files[0])
+
+    }
+
+    function imageInput3(e){
+
+        setPic3(e.target.files[0])
+
+    }
 
 
  
@@ -57,13 +76,13 @@ function ImageForm(){
                      <form className="hosting-form" onSubmit={handleSubmit}>    
                             <div className="image-form-container">
                                 <div className="add-image1">
-                                    <input type="file" name="filename" accept="image/jpeg, image/png" value={pic1} onChange={(e) => setPic1(e.target.value)}/>
+                                    <input type="file" name="filename" accept="image/jpeg, image/png"  onChange={imageInput1}/>
 
 
                                 </div>
                                 <div className="add-image-right">
-                                    <div className="image-right-side add-image2"><input type="file" name="filename" accept="image/jpeg, image/png" value={pic2} onChange={(e) => setPic2(e.target.value)}/></div>
-                                    <div className="image-right-side  add-image3"><input type="file" name="filename" accept=" image/jpeg, image/png" value={pic3} onChange={(e) => setPic3(e.target.value)}/></div>
+                                    <div className="image-right-side add-image2"><input type="file" name="filename" accept="image/jpeg, image/png"  onChange={imageInput2}/></div>
+                                    <div className="image-right-side  add-image3"><input type="file" name="filename" accept=" image/jpeg, image/png" onChange={imageInput3}/></div>
                                 
                                 </div>
                             </div>

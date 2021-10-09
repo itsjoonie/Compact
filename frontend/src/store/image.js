@@ -6,20 +6,37 @@ const addImage = image => ({
     image
 })
 
-export const createImage = (form) => async dispatch => {
+export const createImage = (payload) => async dispatch => {
+    
+    const {hostingId, image, images} = payload
+    const form = new FormData();
+    form.append("hostingId", hostingId);
+    // form.append("images", pic1)
+    // form.append("images", pic2)
+    // form.append("images", pic3)
+    // console.log(pic3, "WHAT IS THIS PIC3")
+      if (images && images.length !== 0) {
+    for (var i = 0; i < images.length; i++) {
+      form.append("images", images[i]);
+    }
+  }
+
     const response = await csrfFetch('/api/images/new', {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
         },
-        body: JSON.stringify({...form})
+        body: form,
     });
 
-    if(response.ok){
-        const image = await response.json();
-        dispatch(addImage(image));
-        return image;
-    }
+    
+  
+
+    // if(response.ok){
+    //     const image = await response.json();
+    //     dispatch(addImage(image));
+    //     return image;
+    // }
 }
 
 
