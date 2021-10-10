@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+/* font-family: 'Ubuntu Mono', monospace; */
+
+.review-form-inputs{
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.review-form-header{
+    background-color: #bde0fecf;
+    border-bottom:  1px solid #f0f0f0;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+.review-form-inputs{
+    margin-top: 15px;
+}
+
+.textarea-input{
+    resize: none;
+    width: 459px;
+    height: 200px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid rgb(150, 150, 150);
+    border-radius: 5px;
+}
+
+.fa-star{
+    color:#fae255 ;
+    font-size: 30px;
+}
+
+
+
+.star-rating{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.review-form-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.review-btns{
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 15px;
+
+}
+
+.submit-review-btn{
+    background-color: #c5dedd;
+}
+
+.cancel-review-btn{
+    background-color: #bcd4e6d7
+}
+
+.submit-review-btn:hover{
+    background-color: #a6c7c6;
+}
+
+.cancel-review-btn:hover{
+    background-color: #9cc8e9
+}
+
+.submit-review-btn:hover,
+.cancel-review-btn:hover{
+    letter-spacing: 1px;
+}
+
+
+
+
