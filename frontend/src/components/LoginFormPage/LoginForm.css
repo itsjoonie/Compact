@@ -101,7 +101,7 @@ font-family: 'Fjalla One', sans-serif; */
     visibility: hidden;
 }
 
-.form-control.error small {
+.form-inputs.error small {
 	visibility: visible;
 }
 

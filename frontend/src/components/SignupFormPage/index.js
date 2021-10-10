@@ -76,104 +76,111 @@ function SignupFormPage({modal2, setModal2, setModal1}) {
         <div className="closeModal">
           <i className="fas fa-times" onClick={closeModal}></i>
         </div>
-        <div className="login-form-header">
-          <div>
-            <h2>Join Compact </h2>
-          </div>
-          <div>
-            <p>Sign up to reserve or host tiny houses.</p>
+        <div className="Signup-form-container">
+       
+          <div className="login-form-header">
+            <div>
+              <h2>Join Compact </h2>
             </div>
+            <div>
+              <p>Sign up to reserve or host tiny houses.</p>
+              </div>
+          </div>
+        <form className="login-form" id="loginForm" onSubmit={handleSubmit}>
+          {/* <ul>
+            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          </ul> */}
+        <div className="name-container">
+          <div className="signup-form-inputs success error">
+            <label>First Name</label>
+            <i className="far fa-user-circle"></i>
+              <input
+                id="login-name"
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+              <i className="fas fa-check-circle"></i>
+              <i className="fas fa-exclamation-circle"></i>
+              <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+          </div>
+
+          <div className="signup-form-inputs success error">
+            <label>Last Name</label>
+            <i className="far fa-user-circle"></i>
+              <input
+                id="login-name"
+                type="text"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+              <i className="fas fa-check-circle"></i>
+              <i className="fas fa-exclamation-circle"></i>
+              <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+          </div>
         </div>
-      <form className="login-form" id="loginForm" onSubmit={handleSubmit}>
-        {/* <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul> */}
-      <div className="form-inputs success error">
-        <label>First Name</label>
-        <i className="far fa-user-circle"></i>
-          <input
-            id="login-name"
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-          <i className="fas fa-check-circle"></i>
-			    <i className="fas fa-exclamation-circle"></i>
-          <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
-      </div>
 
-      <div className="form-inputs success error">
-        <label>Last Name</label>
-        <i className="far fa-user-circle"></i>
-          <input
-            id="login-name"
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-          <i className="fas fa-check-circle"></i>
-			    <i className="fas fa-exclamation-circle"></i>
-          <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
-      </div>
-
-      <div className="form-inputs success error">
-        <label>Username</label>
-        <i className="fas fa-user-edit"></i>
-          <input
-            id="login-name"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <i className="fas fa-check-circle"></i>
-			    <i className="fas fa-exclamation-circle"></i>
-          <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
-      </div>
-      
-      <div className="form-inputs success error">
-        <label>Email</label>
-        <i class="far fa-envelope"></i>
-          <input
-            id="login-name"
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <i className="fas fa-check-circle"></i>
-			    <i className="fas fa-exclamation-circle"></i>
-          <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
-      </div>
         <div className="form-inputs success error">
-          <label>Password</label>
-          <i class="fas fa-unlock-alt"></i>
+          <label>Username</label>
+          <i className="fas fa-user-edit"></i>
             <input
-              id="login-password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              id="login-name"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
+            <i className="fas fa-check-circle"></i>
+            <i className="fas fa-exclamation-circle"></i>
             <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
         </div>
+        
         <div className="form-inputs success error">
-          <label>Confirm Password</label>
-          <i class="fas fa-unlock-alt"></i>
+          <label>Email</label>
+          <i class="far fa-envelope"></i>
             <input
-              id="login-password"
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              id="login-name"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
+            <i className="fas fa-check-circle"></i>
+            <i className="fas fa-exclamation-circle"></i>
             <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
         </div>
-          <button className="submit-form-btn" type="submit">Submit</button>
-      </form>
-      <div className="login-bottom">
-        <p id="or"><span>or</span></p>
-        <p id="question">Already have an account?</p>  <span><button onClick={openLoginForm}>Login</button></span>
+        <div className="passwords-container">
+            <div className="signup-form-inputs success error">
+              <label>Password</label>
+              <i class="fas fa-unlock-alt"></i>
+                <input
+                  id="login-password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+            </div>
+            <div className="signup-form-inputs success error">
+              <label>Confirm Password</label>
+              <i class="fas fa-unlock-alt"></i>
+                <input
+                  id="login-password"
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+            </div>
+          </div>
+            <button className="submit-form-btn" type="submit">Submit</button>
+        </form>
+        <div className="login-bottom">
+          <p id="or"><span>or</span></p>
+          <p id="question">Already have an account?</p>  <span><button onClick={openLoginForm}>Login</button></span>
+        </div>
       </div>
       </div>
       </Modal>
