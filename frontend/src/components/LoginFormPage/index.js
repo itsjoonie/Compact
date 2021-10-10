@@ -78,7 +78,10 @@ function LoginFormPage({modal1, setModal1, setModal2}) {
 
   return (
     <div id="login-form-modal">
-    <button className="navlink-btn navlogin-btn" onClick={openModal}>Log In</button>
+    <div className="nav-btn-container">
+    <button className="navlink-btn navlogin-btn" 
+    onClick={openModal}>Login</button>
+    </div>
     <Modal
         isOpen={modal1}
         onRequestClose={closeModal}
