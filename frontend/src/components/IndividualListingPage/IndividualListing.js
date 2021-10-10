@@ -34,6 +34,8 @@ function IndividualListing(){
 
     console.log("what is hostingggg", hosting)
 
+    const [bookingId, setBookingId] = useState("")
+
 
 
     useEffect(() => {
@@ -131,7 +133,7 @@ function IndividualListing(){
                                             <button id ={booking?.id} className="cancle-reservation" onClick={handleDelete}>Cancel Reservation!</button>
                                         </div>
                                         <div>
-                                            <ReviewForm/>
+                                            <ReviewForm bookingId={booking?.id}/>
                                         </div>
                                         
                                     </div>

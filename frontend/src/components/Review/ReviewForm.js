@@ -25,17 +25,19 @@ const customStyles = {
   }
 };
 
-function ReviewForm(){
+function ReviewForm({bookingId}){
     const dispatch = useDispatch();
     let history = useHistory();
     const id = useParams().id
     const hosting = useSelector((state) => state.hosting[id]) 
     const hostingId = hosting?.id
     let bookings = Object.values(useSelector(state => state.booking));
-    
+    console.log("WHAT IS BOOKUNG", bookings)
+
 
     const userId = useSelector(state => state.session.user.id);
 
+    
     const [starRating, setStarRating] = useState("")
     const [reviewText, setReviewText] = useState("")
     const [reviewModal, setReviewModal] = useState(false)
@@ -55,7 +57,7 @@ function ReviewForm(){
         e.preventDefault();
         const payload = {
             userId,
-            // bookingId,
+            bookingId,
             starRating,
             reviewText
         }

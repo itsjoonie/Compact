@@ -16,6 +16,7 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const [modal1, setModal1] = useState(false);
   const [modal2, setModal2] = useState(false);
+  
 
 
   const logout = (e) => {
