@@ -19,8 +19,11 @@ router.get('/:id', asyncHandler(async(req, res, next) =>{
 }))
 
 router.get('/', asyncHandler(async(req, res, next) => {
-    const reviews = await Review.findAll();
+    const reviews = await Review.findAll({
+        include: [User, Booking],
+    });
     return res.json(reviews)
+    
 }))
 
 router.post('/new', requireAuth, asyncHandler(async (req, res) =>{

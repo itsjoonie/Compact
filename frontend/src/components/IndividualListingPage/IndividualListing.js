@@ -22,7 +22,12 @@ function IndividualListing(){
     // ))
     let allBooking = Object.values(useSelector(state => state.booking));
 
-    const reviews = useSelector(state => state.review)
+  
+
+
+    const reviews = Object.values(useSelector(state => state.review))
+
+        console.log("what is this reviews", reviews)
 
     console.log("what is alllll", allBooking)
 
@@ -120,6 +125,9 @@ function IndividualListing(){
                         </div>
                         <div>
                         <h3>Reviews</h3>
+                            <div>
+                               
+                            </div>
                         </div>
                     </div>
                       <div   className="booking-component">

@@ -62,7 +62,11 @@ function ReviewForm({bookingId}){
             reviewText
         }
 
-        await dispatch(createReview(payload))
+        const review = await dispatch(createReview(payload))
+
+        if(review){
+            setReviewModal(false);
+        }
         
     }
 
@@ -109,7 +113,7 @@ function ReviewForm({bookingId}){
             </div>
             <div className="review-form-btns">
             <button className="cancel-review-btn review-btns" onClick={closeModal}>Cancel</button>
-            <button className="submit-review-btn review-btns" type="submit">Submit</button>
+            <button className="submit-review-btn review-btns" type="submit" >Submit</button>
             </div>
         </form>
         </div>

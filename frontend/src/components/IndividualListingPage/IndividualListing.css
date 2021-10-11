@@ -119,7 +119,9 @@ border-bottom-right-radius: 2%;
 }
 
 .cancle-reservation{
+    border: none;
+    margin-top: 25px;
     width: 240px;
     height: 25px;
-    background-color: rgb(132, 204, 216);
+    background-color: rgba(132, 203, 216, 0.767);
 }

@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 /* font-family: 'Ubuntu Mono', monospace; */
 
+.reviewBtn{
+    width: 240px;
+    height: 25px;
+    background-color:#ffc19fd2;
+    margin-top: 25px;
+    border: none;
+}
 .review-form-inputs{
     position: relative;
     margin-bottom: 15px;
