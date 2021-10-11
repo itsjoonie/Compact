@@ -23,15 +23,6 @@ module.exports = {
       pic3: {
         type: Sequelize.STRING
       },
-      pic4: {
-        type: Sequelize.STRING
-      },
-      pic5: {
-        type: Sequelize.STRING
-      },
-      pic6: {
-        type: Sequelize.STRING
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -20,7 +20,12 @@ router.get('/:id', asyncHandler(async(req, res, next) =>{
 
 router.get('/', asyncHandler(async(req, res, next) => {
     const reviews = await Review.findAll({
-        include: [User, Booking],
+        include: [User, {
+            model:Booking,
+            include:{
+                model:Hosting
+            }
+        }],
     });
     return res.json(reviews)
     

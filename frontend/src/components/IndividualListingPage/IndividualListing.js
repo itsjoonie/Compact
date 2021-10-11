@@ -126,6 +126,18 @@ function IndividualListing(){
                         <div>
                         <h3>Reviews</h3>
                             <div>
+                                {reviews?.map(review =>(<div key={review.id}>{
+                                    review?.Booking?.Hosting?.id == hosting.id ?
+                                    <div>
+                                        <div>{review?.User?.firstName}</div>
+                                        {review?.starRating}
+                                        <p>
+                                            {review?.reviewText}
+                                        </p>
+                                    </div>
+                                    :
+                                    <></>
+                                }</div>))}
                                
                             </div>
                         </div>
