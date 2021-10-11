@@ -119,24 +119,31 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
                         <div className="listing-description-info">
                             <p>{hosting?.description}</p>
                         </div>
-                        <div>
+                        <div className="review-portion">
                         <h3>Reviews</h3>
                             <div>
                                     
-                                {reviews?.map(review =>(<div key={review.id}>{
-                                    review?.Booking?.Hosting?.id == hosting?.id ?
+                                {reviews?.map(review =>(<div className="review-card" key={review.id}>{
+                                    review?.hostingId == hosting?.id ?
                                     <div>
-                                        <div>
+                                        <div className="review-name-container">
                                         <div>{review?.User?.firstName}</div>
+                                        <div className="review-edit">
+                                        {sessionUser == review?.userId ?
                                         <div>
-                                            <button>edit</button>
-                                            <button>delete</button>
+                                         <button id="review-edit">  <i class="fas fa-trash-alt"></i></button> 
+                                            <button className="review-delete"><i class="fas fa-edit"></i></button>
+                                        </div>
+                                        :
+                                        <></>
+                                        }
+                                            
                                         </div>
                                         </div>
                                         <div>
 
                                         </div>
-                                        {review?.starRating}
+                                        {review?.starRating}⭐
                                         <p>
                                             {review?.reviewText}
                                         </p>

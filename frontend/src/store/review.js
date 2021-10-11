@@ -37,7 +37,6 @@ export const createReview= (form) => async dispatch =>{
     });
     if(response.ok){
         const review = await response.json();
-        console.log("WTF IS REVIEW IN THIS STORE", review)
         dispatch(addReview(review));    
         return review
     }

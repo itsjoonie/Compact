@@ -12,27 +12,18 @@ const { Router } = require('express');
 
 router.get('/:id', asyncHandler(async(req, res, next) =>{
     const id = req.params.id
-    const review = await Review.findByPk(id, {
-            include: [Booking, User]
-            });
+    const review = await Review.findByPk(id, {include:User});
     return res.json(review)
 }))
 
 router.get('/', asyncHandler(async(req, res, next) => {
-    const reviews = await Review.findAll({
-        include: [User, {
-            model:Booking,
-            include:{
-                model:Hosting
-            }
-        }],
-    });
+    const reviews = await Review.findAll({include:User});
     return res.json(reviews)
     
 }))
 
 router.post('/new', requireAuth, asyncHandler(async (req, res) =>{
-    const {userId, bookingId, starRating, reviewText} = req.body
+    const {userId, hostingId, bookingId, starRating, reviewText} = req.body
     const review = await Review.create(req.body);
     return res.json(review)
 }))

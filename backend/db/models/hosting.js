@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     Hosting.belongsTo(models.User, { foreignKey: 'userId' });
     Hosting.hasMany(models.Image, { foreignKey: 'hostingId', onDelete: 'CASCADE', hooks: true});
     Hosting.hasMany(models.Booking, { foreignKey: 'hostingId', onDelete:'CASCADE', hooks: true});
+    Hosting.hasMany(models.Review, { foreignKey: 'hostingId', onDelete:'CASCADE', hooks: true});
   };
   return Hosting;
 };

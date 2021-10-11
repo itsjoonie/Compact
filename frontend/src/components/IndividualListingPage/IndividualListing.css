@@ -125,3 +125,31 @@ border-bottom-right-radius: 2%;
     height: 25px;
     background-color: rgba(132, 203, 216, 0.767);
 }
+
+
+/* Review portion */
+.review-portion{
+    margin-top: 20px;
+    width: inherit;
+}
+
+.review-card{
+    margin-top: 10px;
+}
+
+.review-name-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+
+.review-delete{
+    margin-left: 10px;
+}
+
+#review-edit, .review-delete{
+ border: none;
+}

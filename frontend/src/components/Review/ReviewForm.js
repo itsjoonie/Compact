@@ -57,6 +57,7 @@ function ReviewForm({bookingId}){
         e.preventDefault();
         const payload = {
             userId,
+            hostingId,
             bookingId,
             starRating,
             reviewText
