@@ -106,11 +106,17 @@ border-bottom-right-radius: 2%;
 
 .listing-extra-info div p{
     margin-left: 25px;
+   
 }
 
 .listing-description-info{
     width: inherit;
     margin-top: 20px;
+    border-bottom: 1px solid #b6b6b6;
+}
+
+.listing-description-info p{
+    margin-bottom: 25px;
 }
 
 .reservation{
@@ -130,6 +136,7 @@ border-bottom-right-radius: 2%;
 /* Review portion */
 .review-portion{
     margin-top: 20px;
+    margin-bottom: 80px;
     width: inherit;
 }
 
@@ -146,10 +153,10 @@ border-bottom-right-radius: 2%;
 
 
 
-.review-delete{
+.review-edit{
     margin-left: 10px;
 }
 
-#review-edit, .review-delete{
+.review-edit, .review-delete{
  border: none;
 }

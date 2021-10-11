@@ -29,6 +29,7 @@ router.post('/new', requireAuth, asyncHandler(async (req, res)=>{
 
 router.delete('/:id', requireAuth, asyncHandler(async(req, res) => {
     const booking = await Booking.findByPk(+req.params.id);
+    console.log(booking, "WHAT IS THIS BACKEND BOOKING")
     // if(booking.userId === req.user.id) {
         await booking.destroy();
         res.json({ message: "Booking deleted!!" });

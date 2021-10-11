@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import "./IndividualListing.css"
 import {getHostings, deleteOneHosting} from "../../store/hosting"
 import { getBookings, removeBooking} from "../../store/booking";
-import {getReviews} from "../../store/review"
+import {getReviews, removeReview, updateReview} from "../../store/review"
 import BookingForm from "../Booking/BookingForm";
 import ReviewForm from "../Review/ReviewForm";
+import UpdateReviewForm from "../Review/UpdateReview";
 
 
 
@@ -27,7 +28,7 @@ function IndividualListing(){
 
     const reviews = Object.values(useSelector(state => state.review))
 
-        console.log("what is this REVIEWS", reviews)
+    console.log("what is this REVIEWS", reviews)
 
     //if hosting id === booking.hostingId and sessionUser === booking.userId then delete 
 
@@ -46,7 +47,18 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
     }, [dispatch])
 
     const handleDelete = (e) =>{
+        console.log(e.target.id, "DELtrtette")
         dispatch(removeBooking(e.target.id))
+    }
+
+    const handleRemoveReview = (e) =>{
+        console.log(e.currentTarget.id, "REVIEW ETARGJGJJJJBBN")
+        dispatch(removeReview(e.currentTarget.id))
+    }
+
+    const handleUpdateReview = (e) =>{
+        dispatch(updateReview(e.currentTarget.id))
+
     }
 
 
@@ -123,16 +135,18 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
                         <h3>Reviews</h3>
                             <div>
                                     
-                                {reviews?.map(review =>(<div className="review-card" key={review.id}>{
+                                {reviews?.map(review =>(<div className="review-card" key={review?.id}>{
                                     review?.hostingId == hosting?.id ?
                                     <div>
                                         <div className="review-name-container">
-                                        <div>{review?.User?.firstName}</div>
+                                        <div></div>
                                         <div className="review-edit">
                                         {sessionUser == review?.userId ?
                                         <div>
-                                         <button id="review-edit">  <i class="fas fa-trash-alt"></i></button> 
-                                            <button className="review-delete"><i class="fas fa-edit"></i></button>
+                                            <button id={review?.id} onClick={handleRemoveReview} className="review-delete">  <i class="fas fa-trash-alt"></i>
+                                            </button> 
+                                            <UpdateReviewForm reviewId ={review?.id}/>
+
                                         </div>
                                         :
                                         <></>
