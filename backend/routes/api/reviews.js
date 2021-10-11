@@ -34,7 +34,7 @@ router.get('/', asyncHandler(async(req, res, next) => {
 router.post('/new', requireAuth, asyncHandler(async (req, res) =>{
     const {userId, bookingId, starRating, reviewText} = req.body
     const review = await Review.create(req.body);
-    return res.json({review})
+    return res.json(review)
 }))
 
 router.put('/:id', requireAuth, asyncHandler(async (req, res, next) =>{

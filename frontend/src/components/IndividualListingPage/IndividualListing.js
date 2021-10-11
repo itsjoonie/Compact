@@ -27,15 +27,11 @@ function IndividualListing(){
 
     const reviews = Object.values(useSelector(state => state.review))
 
-        console.log("what is this reviews", reviews)
-
-    console.log("what is alllll", allBooking)
-
-    console.log("what is reviews", reviews)
+        console.log("what is this REVIEWS", reviews)
 
     //if hosting id === booking.hostingId and sessionUser === booking.userId then delete 
 
-
+const hostings = useSelector((state)=> Object.values(state.hosting))
 
     console.log("what is hostingggg", hosting)
 
@@ -126,6 +122,7 @@ function IndividualListing(){
                         <div>
                         <h3>Reviews</h3>
                             <div>
+                                    
                                 {reviews?.map(review =>(<div key={review.id}>{
                                     review?.Booking?.Hosting?.id == hosting?.id ?
                                     <div>

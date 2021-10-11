@@ -40,6 +40,7 @@ export const createBooking= (form) => async dispatch =>{
     });
     if(response.ok){
         const booking = await response.json();
+        console.log("WTF IS BOOKING IN THIS STORE", booking)
         dispatch(addBooking(booking));    
         return booking
     }

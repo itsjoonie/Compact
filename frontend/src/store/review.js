@@ -37,6 +37,7 @@ export const createReview= (form) => async dispatch =>{
     });
     if(response.ok){
         const review = await response.json();
+        console.log("WTF IS REVIEW IN THIS STORE", review)
         dispatch(addReview(review));    
         return review
     }
@@ -57,7 +58,7 @@ const reviewReducer = (state = initialState, action) => {
         case ADD_REVIEW:
             return{
                 ...state,
-                [action.review.review.id]: action.review.review
+                [action.review.id]: action.review
             }
         default:
             return state;
