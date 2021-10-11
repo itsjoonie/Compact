@@ -17,22 +17,22 @@ router.get('/', asyncHandler(async(req, res, next) => {
 
 router.post('/new', multipleMulterUpload("images"), requireAuth, asyncHandler( async(req, res) =>{
     
-    // const {hostingId} = req.body;
-    // const {pic1, pic2, pic3} = await singlePublicFileUpload(req.file);
-    // const pic2 = await singlePublicFileUpload(req.file);
-    // const pic3 = await singlePublicFileUpload(req.file);
-    console.log("HELLLOOOOOOOOO THERE")
-    console.log(req.file, "WHAT IS REQ BODY")
-    console.log(req.body, "WHAT IS REQ BODY")
+    const {hostingId} = req.body;
+
+    console.log("THIS IS REQ FILESSSS", req.files)
+    const pic1 = await singlePublicFileUpload(req.files[0]);
+    const pic2 = await singlePublicFileUpload(req.files[1]);
+    const pic3 = await singlePublicFileUpload(req.files[2]);
+
+    const image = await Image.create({
+        hostingId,
+        pic1,
+        pic2,
+        pic3,
+    });
 
 
-    // const image = await Image.create({
-    //     hostingId,
-    //     pic1,
-    //     pic2,
-    //     pic3,
-    // });
-    // return res.json({image});
+    return res.json(image);
 }))
 
 

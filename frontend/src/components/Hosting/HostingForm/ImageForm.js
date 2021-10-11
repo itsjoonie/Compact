@@ -31,11 +31,11 @@ function ImageForm(){
         }
      
 
-       await dispatch(createImage(payload))
-        // console.log(newImage, "new image plsss")
-        // if(newImage){
-        //     history.push(`/listing/${hostingId}`)
-        // }
+      const newImage = await dispatch(createImage(payload))
+
+        if(newImage){
+            history.push(`/listing/${hostingId}`)
+        }
     }
 
     
@@ -48,13 +48,16 @@ function ImageForm(){
 
     function imageInput2(e){
 
-        setPic2(e.target.files[0])
+        const file =e.target.files[0]
+        console.log(file, "WHAT IS THIS FILEEEEEE")
+        if(file) setPic2(file)
 
     }
 
     function imageInput3(e){
 
-        setPic3(e.target.files[0])
+        const file =e.target.files[0]
+        if(file) setPic3(file)
 
     }
 
