@@ -3,11 +3,28 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
+}
 
-    
-
+.header-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
 }
+
+.ind-edit-image{
+    margin-right: 5px;
+}
+.individual-edit-btn{
+    border: none;
+    background-color: none;
+}
+.individual-edit-btn i{
+    font-size: 15px;
+    
+
+}
+
 .individual-listing-container{
     width: 1250px;
     margin-top: 30px;
@@ -16,6 +33,10 @@
 
 .individual-listing-header div p{
     margin-top: 10px;
+}
+.individual-edit-btn{
+    height: 30px;
+    width: 30px;
 }
 
 .images-container{

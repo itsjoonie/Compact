@@ -2,18 +2,24 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, NavLink, useParams} from "react-router-dom";
 import * as sessionActions from "../../../store/session";
-import {createImage} from "../../../store/image";
+import {createImage, updateImage} from "../../../store/image";
 import "./ImageForm.css"
 import "./HostingForm.css"
 
-function ImageForm(){
+function UpdateImageForm(){
     const dispatch = useDispatch();
     let history = useHistory();
     const userId = useSelector(state => state.session.user.id); // grab user id from store
     const {hostingId} = useParams();
+    console.log("WAHT IS THIS HOSTING ID", hostingId)
+    const hosting = useSelector((state) => state.hosting[hostingId]) 
+    console.log("WHAT IS THIS HODDF", hosting)
 
+    const image = hosting?.Images[0]
 
-
+    useEffect(()=>{
+        // dispatch(getImages())
+    })
 
 
     const [pic1, setPic1] = useState("");
@@ -31,7 +37,7 @@ function ImageForm(){
         }
      
 
-      const newImage = await dispatch(createImage(payload))
+      const newImage = await dispatch(updateImage(payload))
 
         if(newImage){
             history.push(`/listing/${hostingId}`)
@@ -61,6 +67,10 @@ function ImageForm(){
 
     }
 
+    //    useEffect(() => {
+       
+    // },[image])
+
 
  
 
@@ -73,7 +83,7 @@ function ImageForm(){
             </div>
             <div className="hosting-form-container">
                 <div>
-                        <h1>Add Images</h1>
+                        <h1>Update Images</h1>
                         </div>
                    <div className="image-form-heading">
                      <form className="hosting-form" onSubmit={handleSubmit}>    
@@ -110,4 +120,4 @@ function ImageForm(){
     )
 }
 
-export default ImageForm;
+export default UpdateImageForm;

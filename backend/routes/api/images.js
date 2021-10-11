@@ -35,5 +35,25 @@ router.post('/new', multipleMulterUpload("images"), requireAuth, asyncHandler( a
     return res.json(image);
 }))
 
+router.put("/:id", multipleMulterUpload("images"), requireAuth, asyncHandler( async(req, res) =>{
+    const id = req.params.id;
+    console.log("WHAT IS THIS ID", id)
+    const {hostingId} = req.body;
+    console.log("THIS IS REQ FILESSSS", req.files)
+    const pic1 = await singlePublicFileUpload(req.files[0]);
+    const pic2 = await singlePublicFileUpload(req.files[1]);
+    const pic3 = await singlePublicFileUpload(req.files[2]);
+
+    const image = await Image.findByPk(req.params.id)
+
+    const updateImage = await image.update({
+        pic1,
+        pic2,
+        pic3,
+    })
+
+    return res.json(updateImage)
+
+}));
 
 module.exports = router;

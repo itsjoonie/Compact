@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import "./IndividualListing.css"
 import {getHostings, deleteOneHosting} from "../../store/hosting"
@@ -62,16 +62,26 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
     }
 
 
+
+
     return (
         <div className="individual-listing">
             <div className="individual-listing-container">
                 <div className="individual-listing-header">
                 <div>
                 <h1 className="individual-listing-title">{hosting?.title}</h1>
+
                 </div>
-                <div>
+                <div className="header-row">
                     <p>{hosting?.city}, {hosting?.state}, {hosting?.country}</p>
-                    </div>
+                    <div>
+                   
+                        <button className="individual-edit-btn ind-edit-image"><i class="fas fa-images"></i></button>
+              
+                        <Link to={`/update/hosting/${id}`}>
+                        <button className="individual-edit-btn"><i class="fas fa-edit"></i></button></Link> 
+                 </div>
+                </div>
                 </div>
                   <div className="images-container">
                     <div className="image-main">

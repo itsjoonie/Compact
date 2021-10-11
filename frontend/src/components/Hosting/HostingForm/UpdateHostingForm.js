@@ -47,8 +47,10 @@ function UpdateHostingForm(){
 
         let editHosting = await dispatch(updateHosting(payload, hosting?.id))
         if(editHosting){
-            history.push(`/listing/${hosting?.id}`)
+        
+            history.push(`/update/hosting/images/${hosting?.id}`)
         }
+        
     }
 
    useEffect(() => {

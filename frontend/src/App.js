@@ -11,6 +11,7 @@ import HostingForm from "./components/Hosting/HostingForm/HostingForm";
 import ImageForm from "./components/Hosting/HostingForm/ImageForm";
 import UpdateHostingForm from "./components/Hosting/HostingForm/UpdateHostingForm";
 import {getHostings} from './store/hosting'
+import UpdateImageForm from "./components/Hosting/HostingForm/UpdateImageForm";
 
 
 
@@ -48,6 +49,9 @@ function App() {
           </Route>
           <Route path="/application/hosting/images/:hostingId" exact>
             <ImageForm/> 
+          </Route>
+          <Route path="/update/hosting/images/:hostingId" exact>
+            <UpdateImageForm/> 
           </Route>
           <Route path="/update/hosting/:id" exact>
               <UpdateHostingForm/>
