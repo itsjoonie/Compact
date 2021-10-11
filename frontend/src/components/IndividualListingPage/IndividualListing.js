@@ -129,7 +129,16 @@ function IndividualListing(){
                                 {reviews?.map(review =>(<div key={review.id}>{
                                     review?.Booking?.Hosting?.id == hosting.id ?
                                     <div>
+                                        <div>
                                         <div>{review?.User?.firstName}</div>
+                                        <div>
+                                            <button>edit</button>
+                                            <button>delete</button>
+                                        </div>
+                                        </div>
+                                        <div>
+
+                                        </div>
                                         {review?.starRating}
                                         <p>
                                             {review?.reviewText}
@@ -145,8 +154,8 @@ function IndividualListing(){
                       <div   className="booking-component">
                         <BookingForm/>
                         <div className="reservation">
-                            {allBooking?.map(booking => (<div key={booking.id}>{
-                                booking.userId == sessionUser ? 
+                            {allBooking?.map(booking => (<div key={booking?.id}>{
+                                booking?.userId == sessionUser && booking?.hostingId == hosting?.id ? 
                                     <div>
                                         <div>
                                             <h3> You have reserved this tiny home from: {booking.startDate} to {booking.endDate}</h3>
