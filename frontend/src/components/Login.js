@@ -6,7 +6,7 @@ function Login(){
         <div className="Protected-container">
             <div className="oopsie">
                 <div>
-                <h1>OOPS YOU ARE NOT LOGIN TO ACCESS THIS</h1>
+                <h1>OOPS YOU ARE NOT LOGGED IN TO ACCESS THIS</h1>
                
                 <h2> Please login or sign up</h2>
                 <h3>Thank you! </h3>
