@@ -17,7 +17,7 @@ router.get('/:id', asyncHandler(async(req, res, next) =>{
 }))
 
 router.get('/', asyncHandler(async(req, res, next) => {
-    const reviews = await Review.findAll({include:User});
+    const reviews = await Review.findAll({include:User, Booking});
     return res.json(reviews)
     
 }))
@@ -46,7 +46,7 @@ router.put('/:id', requireAuth, asyncHandler(async (req, res, next) =>{
 router.delete('/:id', requireAuth, asyncHandler(async(req, res) =>{
     const review = await Review.findByPk(+req.params.id);
     console.log("WHAT IS THIS BACKEND REVIEW", review)
-    await review.destory();
+    await review.destroy();
     res.json({message: "Your review has been deleted!"})
 }))
 
