@@ -21,19 +21,36 @@ font-family: 'Cabin Sketch', cursive; */
 
 }
 
-.oopsie div{
+.oopsie-container{
     margin-top: 80px;
 
 }
 
-.oopsie div h1{
+.oppsie-h1{
     font-family: 'Cabin Sketch', cursive;
     font-size: 55px;
 }
 .oopsie div h2,
-.oopsie div h3{
+.oopsie div h3,
+.exploreMore{
     margin-top: 10px;
     text-align: center;
     font-family: 'Averia Libre', cursive;
     font-size: xx-large;
+}
+.exploreMoreBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.exploreMore{
+    margin-top: 15px;
+    border: 2px solid rgb(127, 167, 147);
+    background-color: rgb(182, 242, 212)
+}
+
+.exploreMore:hover{
+    background-color:rgb(142, 245, 197);
+    font-size: 40px;
 }
