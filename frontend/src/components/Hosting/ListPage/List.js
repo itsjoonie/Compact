@@ -4,12 +4,15 @@ import { useParams, useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import "./List.css";
 import {getHostings, deleteOneHosting} from "../../../store/hosting";
+import Favorite from "./Favorite";
 
 function List(){
     const dispatch = useDispatch()
     const history = useHistory()
     const hostings = useSelector((state)=> Object.values(state.hosting))
     const hostingId = hostings.id
+ 
+
 
 
 
@@ -27,6 +30,10 @@ function List(){
             <div className="list-container">
                 <div>
                     {hostings.map(hosting => (
+                        <div>
+                            <div>
+                                {/* <Favorite hostingId={hosting.id}/> */}
+                            </div>
                         <Link className="listing-links" to={`/listing/${hosting.id}`}>
                     <div className="list-cards-content" key={hosting.id}>
                         
@@ -34,8 +41,12 @@ function List(){
                             <img src={hosting?.Images[0]?.pic1} alt=""></img>
                         </div>
                         <div className="list-cards-content-left">
-                            <div>
-                                <h1> {hosting?.title}</h1>
+                            <div className="list-card-first-row">
+                                <div>
+                                    <h1> {hosting?.title}</h1>
+                                </div>
+                                
+                                
                             </div>
                             <hr className="line-seperation"/>
                             <div className="list-descriptions">
@@ -62,6 +73,7 @@ function List(){
             
                     </div>
                     </Link>
+                    </div>
                     )
                     )}
                 </div>

@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     Hosting.hasMany(models.Image, { foreignKey: 'hostingId', onDelete: 'CASCADE', hooks: true});
     Hosting.hasMany(models.Booking, { foreignKey: 'hostingId', onDelete:'CASCADE', hooks: true});
     Hosting.hasMany(models.Review, { foreignKey: 'hostingId', onDelete:'CASCADE', hooks: true});
+    Hosting.hasMany(models.Favorite, { foreignKey: 'hostingId', onDelete:'CASCADE', hooks: true});
   };
   return Hosting;
 };

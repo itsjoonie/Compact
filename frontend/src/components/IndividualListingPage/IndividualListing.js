@@ -56,10 +56,7 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
         dispatch(removeReview(e.currentTarget.id))
     }
 
-    const handleUpdateReview = (e) =>{
-        dispatch(updateReview(e.currentTarget.id))
 
-    }
 
 
 
@@ -68,9 +65,8 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
         <div className="individual-listing">
             <div className="individual-listing-container">
                 <div className="individual-listing-header">
-                <div>
-                <h1 className="individual-listing-title">{hosting?.title}</h1>
-
+                <div className="individual-listing-title-row">
+                        <h1 className="individual-listing-title">{hosting?.title}</h1>
                 </div>
                 <div className="header-row">
                     <p>{hosting?.city}, {hosting?.state}, {hosting?.country}</p>
