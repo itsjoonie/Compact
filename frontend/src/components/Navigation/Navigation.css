@@ -11,8 +11,6 @@
     justify-content: space-between;
     align-items: center;
 
-
-
     
 }
 
@@ -21,6 +19,22 @@
     width: 180px;
     filter: sepia(100%) hue-rotate(170deg) saturate(600%) brightness(130%) opacity(80%);
 }
+
+.center-nav{
+margin-right:30px;
+}
+.beHost{
+    height: 100%;
+    
+    background-color: white;
+    border: none;
+    color: rgb(19, 142, 218);
+   
+
+
+
+}
+
 
 
 .Navbar-links{

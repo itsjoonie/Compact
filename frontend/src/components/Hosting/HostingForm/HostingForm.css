@@ -78,5 +78,11 @@
 .hosting-btn{
     height: 40px;
     width: 100px;
+    border: none;
+    background-color: rgba(95, 158, 160, 0.714)
+}
+
+.hosting-btn:hover{
+    background-color: cadetblue;
 }
 

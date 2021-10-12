@@ -79,13 +79,13 @@ function ImageForm(){
                      <form className="hosting-form" onSubmit={handleSubmit}>    
                             <div className="image-form-container">
                                 <div className="add-image1">
-                                    <input type="file" name="filename" accept="image/jpeg, image/png"  onChange={imageInput1}/>
+                                    <input type="file" name="filename" accept="image/jpeg, image/png"  onChange={imageInput1} required/>
 
 
                                 </div>
                                 <div className="add-image-right">
-                                    <div className="image-right-side add-image2"><input type="file" name="filename" accept="image/jpeg, image/png"  onChange={imageInput2}/></div>
-                                    <div className="image-right-side  add-image3"><input type="file" name="filename" accept=" image/jpeg, image/png" onChange={imageInput3}/></div>
+                                    <div className="image-right-side add-image2"><input  type="file" name="filename" accept="image/jpeg, image/png"  onChange={imageInput2} required/></div>
+                                    <div className="image-right-side  add-image3"><input type="file" name="filename" accept=" image/jpeg, image/png" onChange={imageInput3} required/></div>
                                 
                                 </div>
                             </div>

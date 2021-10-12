@@ -99,10 +99,11 @@ function SignupFormPage({modal2, setModal2, setModal1}) {
                 type="text"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
+                required
               />
               <i className="fas fa-check-circle"></i>
               <i className="fas fa-exclamation-circle"></i>
-              <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+              {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
           </div>
 
           <div className="signup-form-inputs success error">
@@ -113,10 +114,11 @@ function SignupFormPage({modal2, setModal2, setModal1}) {
                 type="text"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
+                required
               />
               <i className="fas fa-check-circle"></i>
               <i className="fas fa-exclamation-circle"></i>
-              <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+              {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
           </div>
         </div>
 
@@ -128,10 +130,11 @@ function SignupFormPage({modal2, setModal2, setModal1}) {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
             />
             <i className="fas fa-check-circle"></i>
             <i className="fas fa-exclamation-circle"></i>
-            <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+            {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
         </div>
         
         <div className="form-inputs success error">
@@ -142,10 +145,11 @@ function SignupFormPage({modal2, setModal2, setModal1}) {
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <i className="fas fa-check-circle"></i>
             <i className="fas fa-exclamation-circle"></i>
-            <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+            {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
         </div>
         <div className="passwords-container">
             <div className="signup-form-inputs success error">
@@ -156,10 +160,11 @@ function SignupFormPage({modal2, setModal2, setModal1}) {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
-                <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+                {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
             </div>
             <div className="signup-form-inputs success error">
               <label>Confirm Password</label>
@@ -169,10 +174,11 @@ function SignupFormPage({modal2, setModal2, setModal1}) {
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
                 />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
-                <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+                {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
             </div>
           </div>
             <button className="submit-form-btn" type="submit">Submit</button>

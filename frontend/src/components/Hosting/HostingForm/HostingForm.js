@@ -67,7 +67,7 @@ function HostingForm(){
                         </div>
                         <div>
                             <input className="hosting-input-box"
-                            type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+                            type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
                         </div>
                     </div>
                     <div className="hosting-form-field">
@@ -76,7 +76,7 @@ function HostingForm(){
                         </div>
                         <div>
                             <textarea className="hosting-textarea"
-                            type="text" name="description" rows="10" cols="33" value={description} onChange={(e) => setDescription(e.target.value)}/>
+                            type="text" name="description" rows="10" cols="33" value={description} onChange={(e) => setDescription(e.target.value)} required/>
                         </div>
                     </div>
                     <div className="hosting-form-field">
@@ -84,21 +84,21 @@ function HostingForm(){
                             <label>City</label>
                         </div>
                         <input className="hosting-input-box"
-                        type="text" name="city" value={city} onChange={(e) => setCity(e.target.value)}/>
+                        type="text" name="city" value={city} onChange={(e) => setCity(e.target.value)} required/>
                     </div>
                     <div className="hosting-form-field">
                         <div className="hosting-form-label">
                             <label>State</label>
                         </div>
                         <input className="hosting-input-box"
-                        type="text" name="state" value={state} onChange={(e) => setState(e.target.value)}/>
+                        type="text" name="state" value={state} onChange={(e) => setState(e.target.value)} required/>
                     </div>
                     <div className="hosting-form-field">
                         <div className="hosting-form-label">
                             <label>Country</label>
                         </div>
                         <input className="hosting-input-box"
-                        type="text" name="country" value={country} onChange={(e) => setCountry(e.target.value)}/>
+                        type="text" name="country" value={country} onChange={(e) => setCountry(e.target.value)} required/>
                     </div>
                      <div className="hosting-form-field">
                         <div className="hosting-form-label">
@@ -107,7 +107,7 @@ function HostingForm(){
                         <div>
                             <select className="hosting-input-box"
                             name="guest" value={guest}
-                            onChange={(e) => setGuest(e.target.value)}>
+                            onChange={(e) => setGuest(e.target.value)} required>
                                 <option>Please select a number</option>
                                 <option value={1}>1</option>
                                 <option value={2}>2</option>
@@ -123,10 +123,10 @@ function HostingForm(){
                     <div className="petAllowed">
                         <div><label>Pets allowed?  </label>
                         <input 
-                        type="radio" id="yesPet" name="pet" value={true} onChange={(e) => setPet(e.target.value)}/> 
+                        type="radio" id="yesPet" name="pet" value={true} onChange={(e) => setPet(e.target.value)} required/> 
                         <label for="yesPet">Yes  </label>
                         <input 
-                        type="radio" id="noPet" name="pet" value={false} onChange={(e) => setPet(e.target.value)}/>
+                        type="radio" id="noPet" name="pet" value={false} onChange={(e) => setPet(e.target.value)} required/>
                         <label for="noPet">No</label>
                         </div>
                     </div>   
@@ -136,7 +136,7 @@ function HostingForm(){
                         </div>
                         <select className="hosting-input-box"
                         name="bed" value={bed}
-                        onChange={(e) => setBed(e.target.value)}>
+                        onChange={(e) => setBed(e.target.value)} required>
                             <option>Please select a number of bedrooms</option>
                             <option value={1}>1</option>
                             <option value={2}>2</option>
@@ -154,7 +154,7 @@ function HostingForm(){
                         </div>
                         <select className="hosting-input-box"
                         name="bathroom" value={bathroom}
-                        onChange={(e) => setBathroom(e.target.value)}>
+                        onChange={(e) => setBathroom(e.target.value)} required>
                             <option>Please select a number of bathrooms</option>
                             <option value={1}>1</option>
                             <option value={2}>2</option>
@@ -171,7 +171,7 @@ function HostingForm(){
                             <label className="hosting-form-label">Set Price per day</label>
                         </div>
                         <input className="hosting-input-box"
-                        type="text" name="price" value={price}  onChange={(e) => setPrice(e.target.value)}/>
+                        type="text" name="price" value={price}  onChange={(e) => setPrice(e.target.value)} required/>
                     </div>
                     <div id="hosting-btns">
                         <div>

@@ -14,6 +14,7 @@ import {getHostings} from './store/hosting'
 import UpdateImageForm from "./components/Hosting/HostingForm/UpdateImageForm";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./components/Login";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -28,6 +29,7 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
+      <Footer/>
       {isLoaded && (
         <Switch>
 

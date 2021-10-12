@@ -96,6 +96,7 @@ console.log(diffDays + " days");
                                 minDate={new Date()}
                                 onChange={handleCheckInDate}
                                 value={startDate}
+                                required
                             />
                         </div>
                     <div>
@@ -105,6 +106,7 @@ console.log(diffDays + " days");
                         minDate={startDate}
                         onChange={handleCheckOutDate}
                         value={endDate}
+                        required
                     />
                     </div>
                         <div className="guestNum">

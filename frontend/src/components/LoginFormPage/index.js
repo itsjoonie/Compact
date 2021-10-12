@@ -113,11 +113,12 @@ function LoginFormPage({modal1, setModal1, setModal2}) {
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
+            required
            
           />
           <i className="fas fa-check-circle"></i>
 			    <i className="fas fa-exclamation-circle"></i>
-          <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+          {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
         </div>
         <div className="form-inputs success error">
           <label>Password</label>
@@ -127,10 +128,11 @@ function LoginFormPage({modal1, setModal1, setModal2}) {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
-            <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small>
+            {/* <small>{errors.map((error, idx) => <li key={idx}>{error}</li>)}</small> */}
         </div>
           <button className="submit-form-btn" type="submit">Login</button>
       </form>

@@ -75,8 +75,10 @@ function Navigation({ isLoaded }){
           </NavLink>
           </div>
         <div className="Navbar-links">
-          <div>
-            
+          <div className="center-nav">
+   
+            <NavLink  className="navlink-beHost" to="/application/hosting"><button className="beHost">Become a host</button></NavLink>
+
           </div>
           <div>
             <NavLink to="/signup"><button className="navlink-btn navsignup-btn" onClick={logout}>Log Out</button></NavLink>
