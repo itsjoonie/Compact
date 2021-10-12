@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&family=Cabin+Sketch:wght@700&display=swap');
+/*font-family: 'Averia Libre', cursive;
+font-family: 'Cabin Sketch', cursive; */
+
+.Protected-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(247, 255, 251, 0.276)
+
+}
+
+.oopsie{
+ background-image: url("./protectedroute.gif");
+ width: 100%;
+ height: 100%;
+ background-repeat: no-repeat;
+ background-position: center center;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+
+}
+
+.oopsie div{
+    margin-top: 80px;
+
+}
+
+.oopsie div h1{
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 55px;
+}
+.oopsie div h2,
+.oopsie div h3{
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Averia Libre', cursive;
+    font-size: xx-large;
+}

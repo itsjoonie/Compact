@@ -134,7 +134,8 @@ const hostingReducer = (state = initialState, action) =>{
             }
         case DELETE_HOSTING:
             const newState = {...state};
-            delete newState[action.hostingId];
+            console.log("NEWSTAEEEEEE", newState)
+            // delete newState[action.hostingId];
             return newState;
 
         default:

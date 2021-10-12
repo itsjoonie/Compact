@@ -12,6 +12,8 @@ import ImageForm from "./components/Hosting/HostingForm/ImageForm";
 import UpdateHostingForm from "./components/Hosting/HostingForm/UpdateHostingForm";
 import {getHostings} from './store/hosting'
 import UpdateImageForm from "./components/Hosting/HostingForm/UpdateImageForm";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Login from "./components/Login";
 
 
 
@@ -32,6 +34,9 @@ function App() {
           <Route path="/" exact>
             <SplashPage/>
           </Route>
+          <Route path="/login" exact>
+            <Login/>
+          </Route>
           <Route path="/testingpage">
             <HostingForm/> 
             
@@ -44,9 +49,9 @@ function App() {
           <Route path="/listing" exact>
             <List/>
           </Route>
-          <Route path="/application/hosting" exact>
+          <ProtectedRoute path="/application/hosting" exact>
             <HostingForm/> 
-          </Route>
+          </ProtectedRoute>
           <Route path="/application/hosting/images/:hostingId" exact>
             <ImageForm/> 
           </Route>

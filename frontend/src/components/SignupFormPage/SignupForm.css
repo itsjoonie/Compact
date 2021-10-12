@@ -48,3 +48,9 @@
 .signup-form-inputs.error small {
 	visibility: visible;
 }
+
+.orLogin{
+    width: 30px;
+    border: none;
+    background-color: #a8dadc;
+}

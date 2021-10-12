@@ -179,7 +179,7 @@ function SignupFormPage({modal2, setModal2, setModal1}) {
         </form>
         <div className="login-bottom">
           <p id="or"><span>or</span></p>
-          <p id="question">Already have an account?</p>  <span><button onClick={openLoginForm}>Login</button></span>
+          <p id="question">Already have an account?</p>  <span><button className="orLogin" onClick={openLoginForm}>Login</button></span>
         </div>
       </div>
       </div>

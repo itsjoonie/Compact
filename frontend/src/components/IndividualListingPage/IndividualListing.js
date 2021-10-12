@@ -74,13 +74,16 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
                 </div>
                 <div className="header-row">
                     <p>{hosting?.city}, {hosting?.state}, {hosting?.country}</p>
+                    {hosting?.userId == sessionUser?
                     <div>
-                   
-                        <button className="individual-edit-btn ind-edit-image"><i class="fas fa-images"></i></button>
+                        
+                        {/* <button className="individual-edit-btn ind-edit-image"><i class="fas fa-images"></i></button> */}
               
                         <Link to={`/update/hosting/${id}`}>
                         <button className="individual-edit-btn"><i class="fas fa-edit"></i></button></Link> 
-                 </div>
+
+                    </div>
+                :<></>}
                 </div>
                 </div>
                   <div className="images-container">

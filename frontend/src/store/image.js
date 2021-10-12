@@ -38,28 +38,29 @@ export const createImage = (payload) => async dispatch => {
     }
 }
 
-export const updateImage = (payload, id) => async dispatch =>{
-    const {hostingId, pic1, pic2, pic3} = payload
-    const form = new FormData();
-    form.append("hostingId", hostingId);
-    form.append("images", pic1)
-    form.append("images", pic2)
-    form.append("images", pic3)
 
-    const response = await csrfFetch(`/api/images/${id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "multipart/form-data",
-        },
-        body: form,
-    });
+// export const updateImage = (payload, id) => async dispatch =>{
+//     const {hostingId, pic1, pic2, pic3} = payload
+//     const form = new FormData();
+//     form.append("hostingId", hostingId);
+//     form.append("images", pic1)
+//     form.append("images", pic2)
+//     form.append("images", pic3)
 
-    if(response.ok){
-        const image = await response.json();
-        // dispatch(addImage(image)); 
-        return image;
-    }
-}
+//     const response = await csrfFetch(`/api/images/${id}`, {
+//         method: "PUT",
+//         headers: {
+//             "Content-Type": "multipart/form-data",
+//         },
+//         body: form,
+//     });
+
+//     if(response.ok){
+//         const image = await response.json();
+//         // dispatch(addImage(image)); 
+//         return image;
+//     }
+// }
 
 
 

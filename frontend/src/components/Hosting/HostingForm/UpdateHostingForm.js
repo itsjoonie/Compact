@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, NavLink, useParams } from "react-router-dom";
 import * as sessionActions from "../../../store/session";
-import {createHosting, getHostings, updateHosting, getOneHosting} from "../../../store/hosting";
+import {createHosting, getHostings, updateHosting, getOneHosting, deleteOneHosting} from "../../../store/hosting";
 import "./HostingForm.css"
 
 function UpdateHostingForm(){
@@ -48,10 +48,18 @@ function UpdateHostingForm(){
         let editHosting = await dispatch(updateHosting(payload, hosting?.id))
         if(editHosting){
         
-            history.push(`/update/hosting/images/${hosting?.id}`)
+            // history.push(`/update/hosting/images/${hosting?.id}`)
+            history.push(`/listing/${hosting?.id}`)
         }
         
     }
+
+    // const handleDelete = async () =>{
+    //         const deleteHosting = await dispatch(deleteOneHosting(hosting?.id));
+    //         if(deleteHosting) {
+    //             history.push("/");
+    //         }
+    //     }
 
    useEffect(() => {
         if(hosting){
@@ -204,8 +212,11 @@ function UpdateHostingForm(){
                                 <button className="hosting-btn">Cancel</button>  
                             </NavLink> 
                         </div>
+                         <div>
+                            {/* <button className="hosting-btn" onClick={handleDelete}>Delete</button>  */}
+                        </div> 
                         <div>
-                            <button className="hosting-btn" type="submit">Next</button> 
+                            <button className="hosting-btn" type="submit">Update</button> 
                         </div> 
                     </div>           
                 </form>

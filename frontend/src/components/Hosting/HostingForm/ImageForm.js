@@ -48,7 +48,7 @@ function ImageForm(){
 
     function imageInput2(e){
 
-        const file =e.target.files[1]
+        const file =e.target.files[0]
         console.log(file, "WHAT IS THIS FILEEEEEE")
         if(file) setPic2(file)
 
@@ -56,7 +56,7 @@ function ImageForm(){
 
     function imageInput3(e){
 
-        const file =e.target.files[2]
+        const file =e.target.files[0]
         if(file) setPic3(file)
 
     }
@@ -80,9 +80,6 @@ function ImageForm(){
                             <div className="image-form-container">
                                 <div className="add-image1">
                                     <input type="file" name="filename" accept="image/jpeg, image/png"  onChange={imageInput1}/>
-                                    <div>
-                                    {/* <img src={} alt="pic"></img> */}
-                                    </div>
 
 
                                 </div>
