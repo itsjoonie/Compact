@@ -326,7 +326,7 @@
   margin-top: 40px;
   display: flex;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .hosting-banner-content{
@@ -366,4 +366,13 @@
   font-size: 20px;
   height: 55px;
   width: 135px;
+}
+
+.bottomlink{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
 }
