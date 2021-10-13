@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import Footer from "../Footer/Footer"
 import "./Splash.css"
 
 function SplashPage() {
@@ -98,8 +99,21 @@ function SplashPage() {
                          
                         </div>
                     </div>
-                </div>
+                <div className="bottomlink">  
+                    <div className='Github'>
+                        <a className='footerLink'  href='https://github.com/itsjoonie/bobafied' target='_blank' rel='noreferrer'>
+                        <i class='fab fa-github fa-2x' />
+                        </a>
+                    </div>
+                    <div className='linkedIn'>
+                        <a className='footerLink' href='https://www.linkedin.com/in/itisjun/' target='_blank' rel='noreferrer'>
+                        <i class='fab fa-linkedin fa-2x'></i>
+                        </a>
         
+                    </div>
+            </div> 
+                </div>
+             
         </div>
     )
 }

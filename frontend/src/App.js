@@ -29,7 +29,7 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      <Footer/>
+   
       {isLoaded && (
         <Switch>
 
@@ -44,11 +44,11 @@ function App() {
             
           </Route>
           <Route path="/listing/:id" exact>
+          <Footer/>
             <IndividualListing/>
-          
-           
           </Route>
           <Route path="/listing" exact>
+            <Footer/>
             <List/>
           </Route>
           <ProtectedRoute path="/application/hosting" exact>

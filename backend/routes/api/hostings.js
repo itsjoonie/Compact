@@ -30,13 +30,9 @@ router.get('/', asyncHandler(async (req, res, next) => {
 //get one hosting 
 router.get('/:id', asyncHandler(async (req, res) => {
     const hosting = await Hosting.findByPk(req.params.id, {
-       include:[Image, User, Favorite, {
-          model: Booking,
-          include:{
-             model: Review,
-             include: [User, Booking]
-          }
-       }]
+
+       include:[Image, User]
+
     });
     return res.json(hosting);
 }));
@@ -53,13 +49,9 @@ router.put('/:id', requireAuth, asyncHandler(async (req, res, next) => {
       const {title, description, city, state, country, guest, pet, bed, bathroom, price} = req.body;
 
    const hosting = await Hosting.findByPk(req.params.id, {
-       include:[Image, User, Favorite, {
-          model: Booking,
-          include:{
-             model: Review,
-             include: [User, Booking]
-          }
-       }]
+
+       include:[Image, User]
+
     });
    const updateHosting= await hosting.update({title, description, city, state, country, guest, pet, bed, bathroom, price});
    return res.json(updateHosting);
