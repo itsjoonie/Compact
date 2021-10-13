@@ -29,7 +29,7 @@
     width: 100%;
 }
 .hosting-form-heading{
-    margin-top: -30px;
+    margin-top: 15px;
 }
 .hosting-input-box{
     width: 100%;
@@ -65,7 +65,7 @@
     margin-top: 12px;
 }
 
-.hosting-form-label label{
+.hosting-form-label{
     font-weight: bold;
 }
 
@@ -79,7 +79,8 @@
     height: 40px;
     width: 100px;
     border: none;
-    background-color: rgba(95, 158, 160, 0.714)
+    background-color: rgba(95, 158, 160, 0.714);
+    margin-bottom: 20px
 }
 
 .hosting-btn:hover{

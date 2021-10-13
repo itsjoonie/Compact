@@ -38,7 +38,6 @@ function HostingForm(){
         }
 
         let newHosting = await dispatch(createHosting(payload))
-        console.log(newHosting.hosting.id, "WHAT IS NEWHOSTING")
         if(newHosting){
             history.push(`/application/hosting/images/${newHosting.hosting.id}`)
         }
@@ -121,7 +120,7 @@ function HostingForm(){
                         </div>
                     </div>
                     <div className="petAllowed">
-                        <div><label>Pets allowed?  </label>
+                        <div><label className="hosting-form-label">Pets allowed?  </label>
                         <input 
                         type="radio" id="yesPet" name="pet" value={true} onChange={(e) => setPet(e.target.value)} required/> 
                         <label for="yesPet">Yes  </label>
