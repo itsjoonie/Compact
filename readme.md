@@ -39,13 +39,12 @@ live demo: https://compacts.herokuapp.com/
 
 
 
-# backend 
+### backend 
 * npm install
 * npm install -D dotenv-cli nodemon
 * make .env 
     * npx dotenv sequelize db:create
 
-# frontend
+#### frontend
 * npm install
-* npm install -D redux-logger# express-react
-# Compact
+* npm install -D redux-logger
