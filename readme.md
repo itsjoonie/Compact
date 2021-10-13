@@ -4,9 +4,14 @@ live demo: https://compacts.herokuapp.com/
 
 ## Technology
 * Some of the technologies used to build this application: 
-* Backend: Express,
 
-#Express/React
+* Backend: Express
+   * ORM: Sequelize
+   * database: PostgreSQL
+
+* Frontend: Javascript, React/Redux, CSS3
+
+### Site Walkthrough
 
 # backend 
 * npm install
