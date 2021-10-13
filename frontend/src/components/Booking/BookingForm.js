@@ -25,7 +25,7 @@ function BookingForm() {
  
 
     const handleCheckInDate = (date) => {
-        setStartDate(date);
+        setStartDate(date)
         setEndDate(null);
     };
     const handleCheckOutDate = (date) => {
@@ -61,8 +61,8 @@ const handleSubmit = async (e) => {
         const payload = {
             hostingId,
             userId,
-            startDate,
-            endDate,
+            startDate: moment(startDate).format("L"),
+            endDate: moment(endDate).format("L"),
             guest
         }
 
@@ -103,6 +103,7 @@ console.log(diffDays + " days");
                         <div>
                             <label>Check-in</label>
                             <DatePicker
+                                dateFromat="YYYY-MM-dd"
                                 selected={startDate}
                                 minDate={new Date()}
                                 onChange={handleCheckInDate}
@@ -112,12 +113,13 @@ console.log(diffDays + " days");
                         </div>
                     <div>
                     <label>Check-out</label>
-                    <DatePicker
-                        selected={endDate}
-                        minDate={startDate}
-                        onChange={handleCheckOutDate}
-                        value={endDate}
-                        required
+                        <DatePicker
+                            dateFromat="YYYY-MM-dd"
+                            selected={endDate}
+                            minDate={startDate}
+                            onChange={handleCheckOutDate}
+                            value={endDate}
+                            required
                     />
                     </div>
                         <div className="guestNum">

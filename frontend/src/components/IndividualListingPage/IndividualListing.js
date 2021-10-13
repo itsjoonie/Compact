@@ -45,6 +45,7 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
         dispatch(getHostings())
         dispatch(getBookings())
         dispatch(getReviews())
+    
     }, [dispatch])
 
     const handleDelete = (e) =>{
