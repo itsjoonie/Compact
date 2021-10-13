@@ -15,6 +15,7 @@ function BookingForm() {
     const id = useParams().id
     const hosting = useSelector((state) => state.hosting[id]) 
     const hostingId = hosting?.id
+    
     const userId = useSelector(state => state.session.user?.id); 
     console.log("stayhereree", hosting)
     const [startDate, setStartDate] = useState(null);
@@ -24,7 +25,7 @@ function BookingForm() {
  
 
     const handleCheckInDate = (date) => {
-        setStartDate(date);
+        setStartDate(date)
         setEndDate(null);
     };
     const handleCheckOutDate = (date) => {
@@ -50,25 +51,35 @@ function BookingForm() {
             setGuest(1)
         };
     }
+    if(guest>hosting?.guest){
+        setGuest(hosting?.guest)
+        window.alert("Reach max guest for this hosting.")
+    }
 
 const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {
             hostingId,
             userId,
-            startDate,
-            endDate,
+            startDate: moment(startDate).format("L"),
+            endDate: moment(endDate).format("L"),
             guest
         }
 
        await dispatch(createBooking(payload))
+       window.alert("You have successfully made a reservation!")
+       clearForm()
        
         // if(newBooking){
         //     history.push(`/`)
         // }
     }
  
-
+function clearForm (){
+    setStartDate("")
+    setEndDate("")
+    setGuest(1)
+}
 
 
 const date1 = new Date('7/13/2010');
@@ -92,6 +103,7 @@ console.log(diffDays + " days");
                         <div>
                             <label>Check-in</label>
                             <DatePicker
+                                dateFromat="YYYY-MM-dd"
                                 selected={startDate}
                                 minDate={new Date()}
                                 onChange={handleCheckInDate}
@@ -101,12 +113,13 @@ console.log(diffDays + " days");
                         </div>
                     <div>
                     <label>Check-out</label>
-                    <DatePicker
-                        selected={endDate}
-                        minDate={startDate}
-                        onChange={handleCheckOutDate}
-                        value={endDate}
-                        required
+                        <DatePicker
+                            dateFromat="YYYY-MM-dd"
+                            selected={endDate}
+                            minDate={startDate}
+                            onChange={handleCheckOutDate}
+                            value={endDate}
+                            required
                     />
                     </div>
                         <div className="guestNum">

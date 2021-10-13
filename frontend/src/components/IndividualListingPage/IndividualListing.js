@@ -9,6 +9,7 @@ import {getReviews, removeReview, updateReview} from "../../store/review"
 import BookingForm from "../Booking/BookingForm";
 import ReviewForm from "../Review/ReviewForm";
 import UpdateReviewForm from "../Review/UpdateReview";
+import StarReview from "../Review/StarReview";
 
 
 
@@ -44,22 +45,18 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
         dispatch(getHostings())
         dispatch(getBookings())
         dispatch(getReviews())
+    
     }, [dispatch])
 
     const handleDelete = (e) =>{
-        console.log(e.target.id, "DELtrtette")
         dispatch(removeBooking(e.target.id))
     }
 
     const handleRemoveReview = (e) =>{
-        console.log(e.currentTarget.id, "REVIEW ETARGJGJJJJBBN")
         dispatch(removeReview(e.currentTarget.id))
     }
 
-    const handleUpdateReview = (e) =>{
-        dispatch(updateReview(e.currentTarget.id))
 
-    }
 
 
 
@@ -68,9 +65,8 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
         <div className="individual-listing">
             <div className="individual-listing-container">
                 <div className="individual-listing-header">
-                <div>
-                <h1 className="individual-listing-title">{hosting?.title}</h1>
-
+                <div className="individual-listing-title-row">
+                        <h1 className="individual-listing-title">{hosting?.title}</h1>
                 </div>
                 <div className="header-row">
                     <p>{hosting?.city}, {hosting?.state}, {hosting?.country}</p>
@@ -146,13 +142,13 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
                         </div>
                         <div className="review-portion">
                         <h3>Reviews</h3>
-                            <div>
+                            <div className="review-portion-container">
                                     
                                 {reviews?.map(review =>(<div className="review-card" key={review?.id}>{
                                     review?.hostingId == hosting?.id ?
                                     <div>
                                         <div className="review-name-container">
-                                        <div></div>
+                                        <div><h4>{review?.User?.firstName}</h4></div>
                                         <div className="review-edit">
                                         {sessionUser == review?.userId ?
                                         <div>
@@ -170,10 +166,12 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
                                         <div>
 
                                         </div>
-                                        {review?.starRating}⭐
-                                        <p>
-                                            {review?.reviewText}
-                                        </p>
+                                            <StarReview rating={review.starRating} />
+                                        <div className="review-text-content">
+                                            <p >
+                                                {review?.reviewText}
+                                            </p>
+                                        </div>
                                     </div>
                                     :
                                     <></>

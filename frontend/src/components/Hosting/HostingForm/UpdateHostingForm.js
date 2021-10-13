@@ -54,12 +54,12 @@ function UpdateHostingForm(){
         
     }
 
-    // const handleDelete = async () =>{
-    //         const deleteHosting = await dispatch(deleteOneHosting(hosting?.id));
-    //         if(deleteHosting) {
-    //             history.push("/");
-    //         }
-    //     }
+    const handleDelete = async () =>{
+            const deleteHosting = await dispatch(deleteOneHosting(hosting?.id));
+            if(deleteHosting) {
+                history.push("/");
+            }
+        }
 
    useEffect(() => {
         if(hosting){
@@ -213,7 +213,7 @@ function UpdateHostingForm(){
                             </NavLink> 
                         </div>
                          <div>
-                            {/* <button className="hosting-btn" onClick={handleDelete}>Delete</button>  */}
+                            <button className="hosting-btn" onClick={handleDelete}>Delete</button> 
                         </div> 
                         <div>
                             <button className="hosting-btn" type="submit">Update</button> 

@@ -17,13 +17,13 @@ router.get('/:id', asyncHandler(async(req, res, next) =>{
 }))
 
 router.get('/', asyncHandler(async(req, res, next) => {
-    const reviews = await Review.findAll({include:User});
+    const reviews = await Review.findAll({include:User, Hosting});
     return res.json(reviews)
     
 }))
 
 router.post('/new', requireAuth, asyncHandler(async (req, res) =>{
-    const {userId, hostingId, bookingId, starRating, reviewText} = req.body
+    const {userId, hostingId, starRating, reviewText} = req.body
     const review = await Review.create(req.body);
     return res.json(review)
 }))
@@ -33,11 +33,11 @@ router.put('/:id', requireAuth, asyncHandler(async (req, res, next) =>{
     const {userId, bookingId, starRating, reviewText} = req.body;
 
     const review = await Review.findByPk(req.params.id, {
-        include: [Booking, User]
+        include: [Hosting, User]
     });
 
     const updateReview = await review.update({
-        userId, bookingId, starRating, reviewText
+        userId, hostingId, starRating, reviewText
     })
 
     return res.json(updateReview)
@@ -46,7 +46,7 @@ router.put('/:id', requireAuth, asyncHandler(async (req, res, next) =>{
 router.delete('/:id', requireAuth, asyncHandler(async(req, res) =>{
     const review = await Review.findByPk(+req.params.id);
     console.log("WHAT IS THIS BACKEND REVIEW", review)
-    await review.destory();
+    await review.destroy();
     res.json({message: "Your review has been deleted!"})
 }))
 
