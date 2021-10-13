@@ -1,3 +1,11 @@
+# COMPACT
+live demo: https://compacts.herokuapp.com/
+* Compact is a tiny home marketplace for lodging, primarily homestays for vacation rentals, and tourism activities. This fullstack application is a clone of Airbnb.  
+
+## Technology
+* Some of the technologies used to build this application: 
+* Backend: Express,
+
 #Express/React
 
 # backend 
