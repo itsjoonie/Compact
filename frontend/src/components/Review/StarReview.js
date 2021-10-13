@@ -13,7 +13,7 @@ const StarReview = ({rating}) =>{
         {res.map(result => (
             result
         ))}
-        {Number.isInteger(rating) ? null : <i className="fas fa-star-half-alt cut"></i>}
+        {/* {Number.isInteger(rating) ? null : <i className="fas fa-star-half-alt cut"></i>} */}
         </>
     )
 }

@@ -9,6 +9,7 @@ import {getReviews, removeReview, updateReview} from "../../store/review"
 import BookingForm from "../Booking/BookingForm";
 import ReviewForm from "../Review/ReviewForm";
 import UpdateReviewForm from "../Review/UpdateReview";
+import StarReview from "../Review/StarReview";
 
 
 
@@ -140,13 +141,13 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
                         </div>
                         <div className="review-portion">
                         <h3>Reviews</h3>
-                            <div>
+                            <div className="review-portion-container">
                                     
                                 {reviews?.map(review =>(<div className="review-card" key={review?.id}>{
                                     review?.hostingId == hosting?.id ?
                                     <div>
                                         <div className="review-name-container">
-                                        <div>{review?.User?.firstName}</div>
+                                        <div><h4>{review?.User?.firstName}</h4></div>
                                         <div className="review-edit">
                                         {sessionUser == review?.userId ?
                                         <div>
@@ -164,10 +165,12 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
                                         <div>
 
                                         </div>
-                                        {review?.starRating}⭐
-                                        <p>
-                                            {review?.reviewText}
-                                        </p>
+                                            <StarReview rating={review.starRating} />
+                                        <div className="review-text-content">
+                                            <p >
+                                                {review?.reviewText}
+                                            </p>
+                                        </div>
                                     </div>
                                     :
                                     <></>
