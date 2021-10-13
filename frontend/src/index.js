@@ -32,8 +32,8 @@ function Root() {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>,
+  // <React.StrictMode>   // removed b/c window.alert was popping up twice for booking when setting the # of guest
+    <Root />,
+  // </React.StrictMode>,
   document.getElementById('root')
 );

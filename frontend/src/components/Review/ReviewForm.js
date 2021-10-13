@@ -58,7 +58,6 @@ function ReviewForm({bookingId}){
         const payload = {
             userId,
             hostingId,
-            bookingId,
             starRating,
             reviewText
         }
@@ -66,7 +65,10 @@ function ReviewForm({bookingId}){
         const review = await dispatch(createReview(payload))
 
         if(review){
+            window.alert("Your review has been posted!")
+            window.scrollTo(0,document.body.scrollHeight);
             setReviewModal(false);
+            
         }
         
     }

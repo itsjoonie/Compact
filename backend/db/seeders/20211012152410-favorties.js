@@ -16,7 +16,6 @@ module.exports = {
       return queryInterface.bulkInsert('Favorites', [{
         userId: 2,
         hostingId: 1,
-        heart: true
       }], {});
   },
 

@@ -9,18 +9,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        allowNull: false,
         type: Sequelize.INTEGER,
         references: { model: 'Users' }
 
       },
       hostingId: {
-        allowNull: false,
         type: Sequelize.INTEGER,
         references: { model: 'Hostings' }
-      },
-      heart: {
-        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

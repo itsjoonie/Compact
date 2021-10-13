@@ -14,13 +14,7 @@ const review = require('../../db/models/review');
 //get all hostings
 router.get('/', asyncHandler(async (req, res, next) => { 
    const hostings = await Hosting.findAll({
-       include:[Image, User, Favorite, {
-          model: Booking,
-          include:{
-             model: Review,
-             include: [User, Booking]
-          }
-       }]
+       include:[Image, User, Booking]
       });
    return res.json(hostings);
 
@@ -60,13 +54,7 @@ router.put('/:id', requireAuth, asyncHandler(async (req, res, next) => {
 
 router.delete('/:id', requireAuth, asyncHandler(async (req, res, next) =>{
    const hosting = await Hosting.findByPk(+req.params.id, {
-       include:[Image, User, Favorite, {
-          model: Booking,
-          include:{
-             model: Review,
-             include: [User, Booking]
-          }
-       }]
+       include:[Image, User, Booking] 
     });
     hosting.destroy();
     return res.json("successfully deleted");

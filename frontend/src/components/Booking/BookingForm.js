@@ -15,6 +15,7 @@ function BookingForm() {
     const id = useParams().id
     const hosting = useSelector((state) => state.hosting[id]) 
     const hostingId = hosting?.id
+    
     const userId = useSelector(state => state.session.user?.id); 
     console.log("stayhereree", hosting)
     const [startDate, setStartDate] = useState(null);
@@ -50,6 +51,10 @@ function BookingForm() {
             setGuest(1)
         };
     }
+    if(guest>hosting?.guest){
+        setGuest(hosting?.guest)
+        window.alert("Reach max guest for this hosting.")
+    }
 
 const handleSubmit = async (e) => {
         e.preventDefault();
@@ -62,13 +67,19 @@ const handleSubmit = async (e) => {
         }
 
        await dispatch(createBooking(payload))
+       window.alert("You have successfully made a reservation!")
+       clearForm()
        
         // if(newBooking){
         //     history.push(`/`)
         // }
     }
  
-
+function clearForm (){
+    setStartDate("")
+    setEndDate("")
+    setGuest(1)
+}
 
 
 const date1 = new Date('7/13/2010');

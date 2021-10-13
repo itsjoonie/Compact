@@ -16,7 +16,7 @@ router.get('/', asyncHandler(async(req, res, next) => {
 router.get('/:id', asyncHandler(async(req, res, next) =>{
     const id = req.params.id
     const booking = await Booking.findByPk(id, {
-            include: [Review, User]
+            include: [User]
             });
     return res.json(booking)
 }))

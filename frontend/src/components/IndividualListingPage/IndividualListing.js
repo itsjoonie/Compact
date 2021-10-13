@@ -47,12 +47,10 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
     }, [dispatch])
 
     const handleDelete = (e) =>{
-        console.log(e.target.id, "DELtrtette")
         dispatch(removeBooking(e.target.id))
     }
 
     const handleRemoveReview = (e) =>{
-        console.log(e.currentTarget.id, "REVIEW ETARGJGJJJJBBN")
         dispatch(removeReview(e.currentTarget.id))
     }
 
@@ -148,7 +146,7 @@ const hostings = useSelector((state)=> Object.values(state.hosting))
                                     review?.hostingId == hosting?.id ?
                                     <div>
                                         <div className="review-name-container">
-                                        <div></div>
+                                        <div>{review?.User?.firstName}</div>
                                         <div className="review-edit">
                                         {sessionUser == review?.userId ?
                                         <div>

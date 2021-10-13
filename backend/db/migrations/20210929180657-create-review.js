@@ -18,11 +18,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Hostings' }
       },
-      bookingId: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: { model: 'Bookings' }
-      },
       starRating: {
         allowNull: false,
         type: Sequelize.DECIMAL

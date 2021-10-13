@@ -38,7 +38,7 @@ function UpdateReviewForm({reviewId}){
     console.log(reviewId, "WHAT IS THIS IDDDDDDDDD")
     let reviews = useSelector((state) => state.review)
     let review = reviews[reviewId]
-    let bookingId = review.bookingId
+    
 
 
   console.log(reviews, "WHAT IS THIS REVIEWWWWWWSXSXS")
@@ -75,7 +75,6 @@ function UpdateReviewForm({reviewId}){
         const payload = {
             userId,
             hostingId,
-            bookingId,
             starRating,
             reviewText
         }
