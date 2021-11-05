@@ -32,7 +32,6 @@ router.delete('/:id', requireAuth, asyncHandler(async(req, res) => {
     // const reviews = await Review.findAll(review =>{
     //     review.bookingId = booking.id
     // })
-    console.log(booking, "WHAT IS THIS BACKEND BOOKING")
     // if(booking.userId === req.user.id) {
         await booking.destroy();
         res.json({ message: "Booking deleted!!" });

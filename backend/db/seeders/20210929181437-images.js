@@ -40,9 +40,9 @@ module.exports = {
         },
         {
           hostingId: 5,
-          pic1: 'https://daigno.ca/en/assets/images/koroc-v-2021-1949x1273.jpg',
-          pic2: 'https://daigno.ca/en/assets/images/dsc0949-2-2000x1385.jpeg',
-          pic3: 'https://daigno.ca/en/assets/images/dsc0936-2000x1325.jpg',
+          pic1: 'https://tinyhouseboatadventures.com/wp-content/uploads/2017/05/20170429_180452.png',
+          pic2: 'https://tinyhouseboatadventures.com/wp-content/uploads/2017/05/20170902_1544171.jpg',
+          pic3: 'https://tinyhouseboatadventures.com/wp-content/uploads/2017/05/20170419_143611.png',
         },
         {
           hostingId: 6,
