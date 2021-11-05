@@ -21,7 +21,6 @@ function BookingForm() {
     const hostingId = hosting?.id
     
     const userId = useSelector(state => state.session.user?.id); 
-    console.log("stayhereree", hosting)
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const[guest, setGuest] = useState(1);
@@ -99,13 +98,10 @@ const date1 = new Date('7/13/2010');
 const date2 = new Date('12/15/2010');
 const diffTime = Math.abs(date2 - date1);
 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-console.log(diffDays + " days");
 
 
     //if guest went over the limit, pause the counter when it hit max guest
 
-  const handleCalendarClose = () => console.log("Calendar closed");
-  const handleCalendarOpen = () => console.log("Calendar opened");
 
     return(
         <div className="booking-form-page">

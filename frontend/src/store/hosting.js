@@ -60,7 +60,6 @@ export const getOneHosting = (hostingId) => async dispatch =>{
 }
 
 export const createHosting = (form) => async dispatch =>{
-    console.log(form, "what is this")
     const response = await csrfFetch(`/api/hostings/new`, {
         method: "POST",
         headers: {
@@ -79,7 +78,6 @@ export const createHosting = (form) => async dispatch =>{
 }
 
 export const updateHosting = (form, id) => async dispatch =>{
-    console.log(form, "WHAT IS THISSSSSSSSS")
     const response = await csrfFetch(`/api/hostings/${id}`, {
         method: "PUT",
         headers: {
@@ -88,7 +86,6 @@ export const updateHosting = (form, id) => async dispatch =>{
         body: JSON.stringify(form)
     });
     const hosting = await response.json();
-    console.log("PLEASE", hosting)
     if(response.ok){
         
         dispatch(editHosting(hosting));
@@ -134,7 +131,6 @@ const hostingReducer = (state = initialState, action) =>{
             }
         case DELETE_HOSTING:
             const newState = {...state};
-            console.log("NEWSTAEEEEEE", newState)
             // delete newState[action.hostingId];
             return newState;
 

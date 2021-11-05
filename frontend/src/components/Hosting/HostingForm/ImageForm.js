@@ -22,7 +22,6 @@ function ImageForm(){
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("hosting id pls", hostingId)
         const payload = {
             hostingId,
             pic1, //fakepath
@@ -49,7 +48,6 @@ function ImageForm(){
     function imageInput2(e){
 
         const file =e.target.files[0]
-        console.log(file, "WHAT IS THIS FILEEEEEE")
         if(file) setPic2(file)
 
     }

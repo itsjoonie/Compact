@@ -32,7 +32,6 @@ function ReviewForm({bookingId}){
     const hosting = useSelector((state) => state.hosting[id]) 
     const hostingId = hosting?.id
     let bookings = Object.values(useSelector(state => state.booking));
-    console.log("WHAT IS BOOKUNG", bookings)
 
 
     const userId = useSelector(state => state.session.user.id);

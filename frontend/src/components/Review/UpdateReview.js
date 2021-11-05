@@ -30,22 +30,11 @@ function UpdateReviewForm({reviewId}){
     let history = useHistory();
     const id = useParams().id
     const hosting = useSelector((state) => state.hosting[id]) 
-    console.log( "WHATT DHSDSJD SF",hosting)
     const hostingId = hosting?.id
     let bookings = Object.values(useSelector(state => state.booking));
-    console.log("WHAT IS BOOKUNG", hosting)
     // let reviews = Object.values(useSelector(state => state.review));
-    console.log(reviewId, "WHAT IS THIS IDDDDDDDDD")
     let reviews = useSelector((state) => state.review)
     let review = reviews[reviewId]
-    
-
-
-  console.log(reviews, "WHAT IS THIS REVIEWWWWWWSXSXS")
-  console.log("HELPSSSSSS", review)
-    
-
-
 
     const userId = useSelector(state => state.session.user.id);
 

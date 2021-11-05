@@ -28,7 +28,6 @@ const editReview = review =>({
 
 export const getReviews = () => async dispatch =>{
     const response = await csrfFetch(`/api/reviews/`);
-    console.log("WHAT IS RESPONSE", response)
     if(response.ok){
         const reviews = await response.json();
         dispatch(loadReviews(reviews))
@@ -36,7 +35,6 @@ export const getReviews = () => async dispatch =>{
 }
 
 export const createReview= (form) => async dispatch =>{
-    console.log(form, "what is this")
     const response = await csrfFetch(`/api/reviews/new`, {
         method: "POST",
         headers: {
@@ -53,7 +51,6 @@ export const createReview= (form) => async dispatch =>{
 }
 
 export const updateReview = (form, id) => async dispatch =>{
-    console.log(form, "WHAT IS THISSSSSSSSS")
     const response = await csrfFetch(`/api/reviews/${id}`, {
         method: "PUT",
         headers: {

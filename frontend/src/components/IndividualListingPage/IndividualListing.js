@@ -23,19 +23,9 @@ function IndividualListing(){
     //     booking.userId == userId
     // ))
     let allBooking = Object.values(useSelector(state => state.booking));
-
-  
-
-
     const reviews = Object.values(useSelector(state => state.review))
 
-    console.log("what is this REVIEWS", reviews)
-
-    //if hosting id === booking.hostingId and sessionUser === booking.userId then delete 
-
-const hostings = useSelector((state)=> Object.values(state.hosting))
-
-    console.log("what is hostingggg", hosting)
+    const hostings = useSelector((state)=> Object.values(state.hosting))
 
     const [bookingId, setBookingId] = useState("")
 

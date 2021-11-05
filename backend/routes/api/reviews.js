@@ -45,7 +45,6 @@ router.put('/:id', requireAuth, asyncHandler(async (req, res, next) =>{
 
 router.delete('/:id', requireAuth, asyncHandler(async(req, res) =>{
     const review = await Review.findByPk(+req.params.id);
-    console.log("WHAT IS THIS BACKEND REVIEW", review)
     await review.destroy();
     res.json({message: "Your review has been deleted!"})
 }))

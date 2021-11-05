@@ -9,12 +9,9 @@ function UpdateHostingForm(){
     const dispatch = useDispatch();
     let history = useHistory();
     const {id} = useParams();
-   console.log(id,"WHAT IS THIS")
     const hosting = useSelector((state) => state.hosting[id])
-    console.log(hosting, "WHAT IS THIS HOSTING STUFF")
     const userId = useSelector(state => state.session.user.id);
     const hostingId = hosting?.id
-    console.log("WHAT IS THIS THIS ID", hostingId) // grab user id from store
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -31,7 +28,6 @@ function UpdateHostingForm(){
 
     const handleUpdate = async (e) => {
         e.preventDefault();
-        console.log(userId, "USER ID PLEASE")
         const payload = {
             title,
             description,
